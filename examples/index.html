@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Italia WC - Examples</title>
+    
+    <!-- Bootstrap Italia CSS (required) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
+    
+    <style>
+        body {
+            padding: 2rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        
+        .example-card {
+            margin-bottom: 2rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            overflow: hidden;
+        }
+        
+        .example-card-header {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .example-card-body {
+            padding: 1rem;
+        }
+        
+        .example-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            transition: background-color 0.15s ease-in-out;
+        }
+        
+        .example-link:hover {
+            background-color: #0052a3;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bootstrap Italia WC - Examples</h1>
+        <p>Welcome to the Bootstrap Italia Web Components examples. These examples demonstrate how to use the various Web Components in your projects.</p>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="example-card">
+                    <div class="example-card-header">
+                        <h3>Basic Alerts</h3>
+                    </div>
+                    <div class="example-card-body">
+                        <p>Learn how to use the <code>it-alert</code> component with different types, dismissible functionality, and event handling.</p>
+                        <a href="basic-alerts.html" class="example-link">View Alert Examples</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="example-card">
+                    <div class="example-card-header">
+                        <h3>More Components</h3>
+                    </div>
+                    <div class="example-card-body">
+                        <p>Additional components will be added in future releases. Check back for more examples!</p>
+                        <a href="#" class="example-link" onclick="alert('Coming soon!')">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="example-card">
+                    <div class="example-card-header">
+                        <h3>Getting Started</h3>
+                    </div>
+                    <div class="example-card-body">
+                        <h4>Installation</h4>
+                        <p>Include the Bootstrap Italia CSS and the Bootstrap Italia WC JavaScript in your HTML:</p>
+                        <pre><code>&lt;!-- Bootstrap Italia CSS (required) --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css"&gt;
+
+&lt;!-- Bootstrap Italia WC JavaScript --&gt;
+&lt;script src="path/to/bootstrap-italia-wc.js"&gt;&lt;/script&gt;</code></pre>
+                        
+                        <h4>Usage</h4>
+                        <p>Use the Web Components in your HTML:</p>
+                        <pre><code>&lt;it-alert type="success" dismissible&gt;
+  &lt;strong&gt;Success!&lt;/strong&gt; This is a success alert.
+&lt;/it-alert&gt;</code></pre>
+                        
+                        <h4>API</h4>
+                        <p>All components support standard HTML attributes and custom properties. Check the individual example pages for detailed API documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

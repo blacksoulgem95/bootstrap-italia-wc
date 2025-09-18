@@ -1,0 +1,51 @@
+{
+  "name": "bootstrap-italia-wc",
+  "version": "1.0.0",
+  "description": "Bootstrap Italia components as native Web Components",
+  "main": "dist/bootstrap-italia-wc.js",
+  "module": "dist/bootstrap-italia-wc.esm.js",
+  "types": "dist/bootstrap-italia-wc.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "AGENT.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "lint": "eslint src/**/*.js tests/**/*.js",
+    "dev": "rollup -c -w",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "bootstrap",
+    "italia",
+    "web-components",
+    "custom-elements",
+    "vanilla-js"
+  ],
+  "author": "Bootstrap Italia WC Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/bootstrap-italia-wc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/bootstrap-italia-wc/issues"
+  },
+  "homepage": "https://github.com/your-org/bootstrap-italia-wc#readme",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.52.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "rollup": "^4.3.0"
+  },
+  "dependencies": {}
+}

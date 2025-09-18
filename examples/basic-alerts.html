@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Italia WC - Basic Alerts</title>
+    
+    <!-- Bootstrap Italia CSS (required) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
+    
+    <!-- Bootstrap Italia WC JavaScript -->
+    <script src="../dist/bootstrap-italia-wc.js"></script>
+    
+    <style>
+        body {
+            padding: 2rem;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        
+        .example-section {
+            margin-bottom: 3rem;
+        }
+        
+        .example-section h2 {
+            margin-bottom: 1rem;
+            color: #0066cc;
+        }
+        
+        .example-section p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .alert-container {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bootstrap Italia WC - Alert Examples</h1>
+        <p>This page demonstrates the <code>it-alert</code> Web Component with various configurations.</p>
+        
+        <div class="example-section">
+            <h2>Basic Alerts</h2>
+            <p>Simple alerts with different types:</p>
+            
+            <div class="alert-container">
+                <it-alert type="info">
+                    <strong>Info!</strong> This is an info alert with some additional text.
+                </it-alert>
+            </div>
+            
+            <div class="alert-container">
+                <it-alert type="success">
+                    <strong>Success!</strong> This is a success alert indicating a successful action.
+                </it-alert>
+            </div>
+            
+            <div class="alert-container">
+                <it-alert type="warning">
+                    <strong>Warning!</strong> This is a warning alert with important information.
+                </it-alert>
+            </div>
+            
+            <div class="alert-container">
+                <it-alert type="danger">
+                    <strong>Danger!</strong> This is a danger alert indicating a dangerous action.
+                </it-alert>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Dismissible Alerts</h2>
+            <p>Alerts that can be dismissed by the user:</p>
+            
+            <div class="alert-container">
+                <it-alert type="info" dismissible>
+                    <strong>Dismissible Info!</strong> Click the × to dismiss this alert.
+                </it-alert>
+            </div>
+            
+            <div class="alert-container">
+                <it-alert type="success" dismissible>
+                    <strong>Dismissible Success!</strong> This alert can be dismissed.
+                </it-alert>
+            </div>
+            
+            <div class="alert-container">
+                <it-alert type="warning" dismissible>
+                    <strong>Dismissible Warning!</strong> This alert can be dismissed.
+                </it-alert>
+            </div>
+            
+            <div class="alert-container">
+                <it-alert type="danger" dismissible>
+                    <strong>Dismissible Danger!</strong> This alert can be dismissed.
+                </it-alert>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Dynamic Alerts</h2>
+            <p>Alerts that can be controlled via JavaScript:</p>
+            
+            <div class="alert-container">
+                <it-alert type="info" dismissible id="dynamic-alert">
+                    <strong>Dynamic Alert!</strong> This alert can be controlled via JavaScript.
+                </it-alert>
+            </div>
+            
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary" onclick="showAlert()">Show Alert</button>
+                <button type="button" class="btn btn-secondary" onclick="hideAlert()">Hide Alert</button>
+                <button type="button" class="btn btn-success" onclick="changeType('success')">Success Type</button>
+                <button type="button" class="btn btn-warning" onclick="changeType('warning')">Warning Type</button>
+                <button type="button" class="btn btn-danger" onclick="changeType('danger')">Danger Type</button>
+            </div>
+        </div>
+        
+        <div class="example-section">
+            <h2>Event Handling</h2>
+            <p>Listen to alert dismiss events:</p>
+            
+            <div class="alert-container">
+                <it-alert type="info" dismissible id="event-alert">
+                    <strong>Event Alert!</strong> Check the console when you dismiss this alert.
+                </it-alert>
+            </div>
+            
+            <div id="event-log" class="mt-3">
+                <h4>Event Log:</h4>
+                <div id="log-content" style="background: #f8f9fa; padding: 1rem; border-radius: 0.25rem; min-height: 100px;">
+                    <em>No events yet...</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Wait for the component to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dynamic alert controls
+            window.showAlert = function() {
+                const alert = document.getElementById('dynamic-alert');
+                alert.show();
+            };
+            
+            window.hideAlert = function() {
+                const alert = document.getElementById('dynamic-alert');
+                alert.dismiss();
+            };
+            
+            window.changeType = function(type) {
+                const alert = document.getElementById('dynamic-alert');
+                alert.type = type;
+            };
+            
+            // Event handling
+            const eventAlert = document.getElementById('event-alert');
+            const logContent = document.getElementById('log-content');
+            
+            eventAlert.addEventListener('it-alert-dismiss', function(event) {
+                const timestamp = new Date().toLocaleTimeString();
+                const logEntry = document.createElement('div');
+                logEntry.innerHTML = `<strong>${timestamp}:</strong> Alert dismissed (type: ${event.detail.type})`;
+                logEntry.style.marginBottom = '0.5rem';
+                
+                if (logContent.innerHTML.includes('No events yet')) {
+                    logContent.innerHTML = '';
+                }
+                
+                logContent.appendChild(logEntry);
+            });
+        });
+    </script>
+</body>
+</html>
