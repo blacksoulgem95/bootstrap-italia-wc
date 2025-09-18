@@ -30,7 +30,7 @@ npm install bootstrap-italia-wc
 ### CDN
 
 ```html
-<!-- Bootstrap Italia CSS (richiesto) -->
+<!-- Bootstrap Italia CSS (richiesto - assumiamo che sia già importato globalmente) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
 
 <!-- Bootstrap Italia WC JavaScript -->
@@ -43,13 +43,13 @@ Scarica l'ultima release dalla [pagina delle release](https://github.com/your-or
 
 ## Guida Rapida
 
-1. **Includi CSS e JavaScript:**
+1. **Includi il CSS di Bootstrap Italia (se non già presente):**
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Bootstrap Italia CSS (richiesto) -->
+    <!-- Bootstrap Italia CSS (richiesto - assumiamo che sia già importato globalmente) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
     
     <!-- Bootstrap Italia WC JavaScript -->
@@ -60,6 +60,8 @@ Scarica l'ultima release dalla [pagina delle release](https://github.com/your-or
 </body>
 </html>
 ```
+
+**Nota**: I Web Components assumono che il CSS di Bootstrap Italia sia già disponibile globalmente nella pagina. Se non lo hai ancora incluso, aggiungi il link CSS sopra.
 
 2. **Usa i Web Components:**
 
@@ -82,6 +84,17 @@ document.addEventListener('it-alert-dismiss', function(event) {
     console.log('Alert chiuso:', event.detail.type);
 });
 ```
+
+## Assunzioni sui CSS
+
+I Web Components di Bootstrap Italia WC **assumono che il CSS di Bootstrap Italia sia già importato globalmente** nella pagina. Questo significa:
+
+- ✅ **Non re-implementano** gli stili CSS di Bootstrap Italia
+- ✅ **Si basano** sui CSS esistenti per l'aspetto visivo
+- ✅ **Aggiungono solo** gli stili necessari per l'accessibilità e le funzionalità specifiche
+- ✅ **Sono compatibili** con qualsiasi versione di Bootstrap Italia CSS
+
+Se stai già usando Bootstrap Italia nel tuo progetto, i Web Components funzioneranno immediatamente senza configurazione aggiuntiva.
 
 ## Componenti
 
