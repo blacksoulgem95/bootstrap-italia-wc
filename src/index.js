@@ -13,10 +13,26 @@
 
 // Import all components
 import ItAlert from './it-alert.js';
+import ItFormInput from './it-form-input.js';
+import ItFormTextarea from './it-form-textarea.js';
+import ItFormSelect from './it-form-select.js';
+import ItFormCheckbox from './it-form-checkbox.js';
+import ItFormRadio from './it-form-radio.js';
+import ItFormFile from './it-form-file.js';
+import ItFormToggle from './it-form-toggle.js';
+import ItFormGroup from './it-form-group.js';
 
 // Export all components
 export {
-  ItAlert
+  ItAlert,
+  ItFormInput,
+  ItFormTextarea,
+  ItFormSelect,
+  ItFormCheckbox,
+  ItFormRadio,
+  ItFormFile,
+  ItFormToggle,
+  ItFormGroup
 };
 
 // Auto-register all components when the module is loaded
@@ -33,10 +49,26 @@ export const VERSION = '1.0.0';
 const BootstrapItaliaWC = {
   VERSION,
   ItAlert,
+  ItFormInput,
+  ItFormTextarea,
+  ItFormSelect,
+  ItFormCheckbox,
+  ItFormRadio,
+  ItFormFile,
+  ItFormToggle,
+  ItFormGroup,
   
   // Utility function to check if all components are registered
   isReady() {
-    return customElements.get('it-alert') !== undefined;
+    return customElements.get('it-alert') !== undefined &&
+           customElements.get('it-form-input') !== undefined &&
+           customElements.get('it-form-textarea') !== undefined &&
+           customElements.get('it-form-select') !== undefined &&
+           customElements.get('it-form-checkbox') !== undefined &&
+           customElements.get('it-form-radio') !== undefined &&
+           customElements.get('it-form-file') !== undefined &&
+           customElements.get('it-form-toggle') !== undefined &&
+           customElements.get('it-form-group') !== undefined;
   },
   
   // Utility function to wait for all components to be ready

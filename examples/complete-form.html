@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Italia WC - Form Completo</title>
+    
+    <!-- Bootstrap Italia CSS (richiesto) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
+    
+    <!-- Bootstrap Italia WC JavaScript -->
+    <script src="../dist/bootstrap-italia-wc.js"></script>
+    
+    <style>
+        body {
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 0.375rem;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .form-section h3 {
+            color: #0066cc;
+            margin-bottom: 1rem;
+        }
+        
+        .form-actions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .btn {
+            margin: 0 0.5rem;
+        }
+        
+        .alert {
+            margin-bottom: 1rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-row > * {
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form di Registrazione</h1>
+        <p class="lead">Esempio completo di un form di registrazione utilizzando i componenti Bootstrap Italia WC.</p>
+        
+        <!-- Alert per feedback -->
+        <it-alert type="info" dismissible id="form-alert" style="display: none;">
+            <strong>Info:</strong> <span id="alert-message"></span>
+        </it-alert>
+        
+        <form id="registration-form" novalidate>
+            <!-- Informazioni Personali -->
+            <div class="form-section">
+                <h3>Informazioni Personali</h3>
+                
+                <it-form-group 
+                    label="Dati Anagrafici" 
+                    help-text="Inserisci i tuoi dati personali"
+                >
+                    <div class="form-row">
+                        <it-form-input 
+                            type="text" 
+                            label="Nome" 
+                            name="firstName"
+                            placeholder="Inserisci il nome"
+                            required
+                        ></it-form-input>
+                        
+                        <it-form-input 
+                            type="text" 
+                            label="Cognome" 
+                            name="lastName"
+                            placeholder="Inserisci il cognome"
+                            required
+                        ></it-form-input>
+                    </div>
+                    
+                    <it-form-input 
+                        type="email" 
+                        label="Email" 
+                        name="email"
+                        placeholder="nome@esempio.it"
+                        help-text="Utilizzeremo questa email per contattarti"
+                        required
+                    ></it-form-input>
+                    
+                    <it-form-input 
+                        type="tel" 
+                        label="Telefono" 
+                        name="phone"
+                        placeholder="+39 123 456 7890"
+                        help-text="Numero di telefono opzionale"
+                    ></it-form-input>
+                </it-form-group>
+            </div>
+            
+            <!-- Informazioni di Accesso -->
+            <div class="form-section">
+                <h3>Informazioni di Accesso</h3>
+                
+                <it-form-group 
+                    label="Credenziali" 
+                    help-text="Scegli le tue credenziali di accesso"
+                >
+                    <it-form-input 
+                        type="text" 
+                        label="Nome Utente" 
+                        name="username"
+                        placeholder="Scegli un nome utente"
+                        help-text="Deve essere unico e contenere almeno 3 caratteri"
+                        required
+                    ></it-form-input>
+                    
+                    <it-form-input 
+                        type="password" 
+                        label="Password" 
+                        name="password"
+                        placeholder="Inserisci una password sicura"
+                        help-text="Minimo 8 caratteri, deve contenere lettere e numeri"
+                        required
+                    ></it-form-input>
+                    
+                    <it-form-input 
+                        type="password" 
+                        label="Conferma Password" 
+                        name="confirmPassword"
+                        placeholder="Ripeti la password"
+                        required
+                    ></it-form-input>
+                </it-form-group>
+            </div>
+            
+            <!-- Informazioni Aggiuntive -->
+            <div class="form-section">
+                <h3>Informazioni Aggiuntive</h3>
+                
+                <it-form-group 
+                    label="Profilo" 
+                    help-text="Aiutaci a conoscerti meglio"
+                >
+                    <it-form-input 
+                        type="date" 
+                        label="Data di Nascita" 
+                        name="birthDate"
+                        required
+                    ></it-form-input>
+                    
+                    <it-form-select 
+                        label="Genere" 
+                        name="gender"
+                        required
+                    >
+                        <option value="">Seleziona...</option>
+                        <option value="male">Maschio</option>
+                        <option value="female">Femmina</option>
+                        <option value="other">Altro</option>
+                        <option value="prefer-not-to-say">Preferisco non dire</option>
+                    </it-form-select>
+                    
+                    <it-form-select 
+                        label="Paese di Residenza" 
+                        name="country"
+                        required
+                    >
+                        <option value="">Seleziona...</option>
+                        <option value="IT">Italia</option>
+                        <option value="FR">Francia</option>
+                        <option value="DE">Germania</option>
+                        <option value="ES">Spagna</option>
+                        <option value="UK">Regno Unito</option>
+                        <option value="US">Stati Uniti</option>
+                        <option value="other">Altro</option>
+                    </it-form-select>
+                    
+                    <it-form-textarea 
+                        label="Biografia" 
+                        name="bio"
+                        placeholder="Raccontaci qualcosa di te..."
+                        rows="3"
+                        maxlength="500"
+                        help-text="Massimo 500 caratteri"
+                    ></it-form-textarea>
+                </it-form-group>
+            </div>
+            
+            <!-- Preferenze -->
+            <div class="form-section">
+                <h3>Preferenze</h3>
+                
+                <it-form-group 
+                    label="Notifiche" 
+                    help-text="Scegli come vuoi essere contattato"
+                >
+                    <it-form-toggle 
+                        label="Ricevi notifiche via email" 
+                        name="emailNotifications"
+                        value="true"
+                        help-text="Ricevi aggiornamenti e promozioni via email"
+                    ></it-form-toggle>
+                    
+                    <it-form-toggle 
+                        label="Ricevi notifiche SMS" 
+                        name="smsNotifications"
+                        value="true"
+                        help-text="Ricevi notifiche importanti via SMS"
+                    ></it-form-toggle>
+                    
+                    <it-form-checkbox 
+                        label="Accetto di ricevere comunicazioni marketing" 
+                        name="marketing"
+                        value="true"
+                        help-text="Promozioni e offerte speciali"
+                    ></it-form-checkbox>
+                </it-form-group>
+                
+                <it-form-group 
+                    label="Interessi" 
+                    help-text="Seleziona i tuoi interessi"
+                >
+                    <it-form-checkbox 
+                        label="Tecnologia" 
+                        name="interests"
+                        value="technology"
+                    ></it-form-checkbox>
+                    
+                    <it-form-checkbox 
+                        label="Sport" 
+                        name="interests"
+                        value="sports"
+                    ></it-form-checkbox>
+                    
+                    <it-form-checkbox 
+                        label="Musica" 
+                        name="interests"
+                        value="music"
+                    ></it-form-checkbox>
+                    
+                    <it-form-checkbox 
+                        label="Viaggi" 
+                        name="interests"
+                        value="travel"
+                    ></it-form-checkbox>
+                    
+                    <it-form-checkbox 
+                        label="Cucina" 
+                        name="interests"
+                        value="cooking"
+                    ></it-form-checkbox>
+                </it-form-group>
+            </div>
+            
+            <!-- Upload File -->
+            <div class="form-section">
+                <h3>Documenti</h3>
+                
+                <it-form-group 
+                    label="Upload" 
+                    help-text="Carica i documenti richiesti"
+                >
+                    <it-form-file 
+                        label="Foto Profilo" 
+                        name="profilePhoto"
+                        accept="image/*"
+                        help-text="Formati supportati: JPG, PNG, GIF (max 5MB)"
+                    ></it-form-file>
+                    
+                    <it-form-file 
+                        label="Documento di Identità" 
+                        name="idDocument"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        help-text="Copia del documento di identità (PDF o immagine)"
+                        required
+                    ></it-form-file>
+                </it-form-group>
+            </div>
+            
+            <!-- Termini e Condizioni -->
+            <div class="form-section">
+                <h3>Termini e Condizioni</h3>
+                
+                <it-form-group 
+                    label="Accettazione" 
+                    help-text="Leggi e accetta i termini di servizio"
+                >
+                    <it-form-checkbox 
+                        label="Accetto i termini e condizioni di servizio" 
+                        name="terms"
+                        value="accepted"
+                        required
+                    ></it-form-checkbox>
+                    
+                    <it-form-checkbox 
+                        label="Accetto l'informativa sulla privacy" 
+                        name="privacy"
+                        value="accepted"
+                        required
+                    ></it-form-checkbox>
+                    
+                    <it-form-checkbox 
+                        label="Dichiaro di aver letto e compreso le condizioni" 
+                        name="understood"
+                        value="accepted"
+                        required
+                    ></it-form-checkbox>
+                </it-form-group>
+            </div>
+            
+            <!-- Azioni del Form -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                    <i class="it-refresh"></i> Reset
+                </button>
+                
+                <button type="button" class="btn btn-outline-primary" onclick="validateForm()">
+                    <i class="it-check"></i> Valida
+                </button>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="it-user"></i> Registrati
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // Gestione del form
+        const form = document.getElementById('registration-form');
+        const alert = document.getElementById('form-alert');
+        const alertMessage = document.getElementById('alert-message');
+        
+        // Validazione password
+        function validatePassword() {
+            const password = document.querySelector('input[name="password"]');
+            const confirmPassword = document.querySelector('input[name="confirmPassword"]');
+            
+            if (password && confirmPassword) {
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.validation = 'invalid';
+                    confirmPassword.validationMessage = 'Le password non coincidono';
+                    return false;
+                } else if (confirmPassword.value) {
+                    confirmPassword.validation = 'valid';
+                    confirmPassword.validationMessage = 'Password confermata';
+                }
+            }
+            return true;
+        }
+        
+        // Event listeners
+        document.querySelector('input[name="password"]').addEventListener('input', validatePassword);
+        document.querySelector('input[name="confirmPassword"]').addEventListener('input', validatePassword);
+        
+        // Validazione form
+        function validateForm() {
+            const formElements = document.querySelectorAll([
+                'it-form-input',
+                'it-form-textarea', 
+                'it-form-select',
+                'it-form-checkbox',
+                'it-form-radio',
+                'it-form-file',
+                'it-form-toggle'
+            ].join(', '));
+            
+            let isValid = true;
+            let errorCount = 0;
+            
+            formElements.forEach(element => {
+                if (element.hasAttribute('required')) {
+                    if (element.type === 'checkbox' || element.type === 'radio' || element.tagName.toLowerCase().includes('toggle')) {
+                        if (!element.checked) {
+                            element.validation = 'invalid';
+                            element.validationMessage = 'Campo obbligatorio';
+                            isValid = false;
+                            errorCount++;
+                        } else {
+                            element.validation = 'valid';
+                            element.validationMessage = 'Campo valido';
+                        }
+                    } else if (element.type === 'file') {
+                        if (!element.files || element.files.length === 0) {
+                            element.validation = 'invalid';
+                            element.validationMessage = 'File obbligatorio';
+                            isValid = false;
+                            errorCount++;
+                        } else {
+                            element.validation = 'valid';
+                            element.validationMessage = 'File caricato';
+                        }
+                    } else {
+                        if (!element.value || element.value.trim() === '') {
+                            element.validation = 'invalid';
+                            element.validationMessage = 'Campo obbligatorio';
+                            isValid = false;
+                            errorCount++;
+                        } else {
+                            element.validation = 'valid';
+                            element.validationMessage = 'Campo valido';
+                        }
+                    }
+                }
+            });
+            
+            // Validazione password
+            if (!validatePassword()) {
+                isValid = false;
+                errorCount++;
+            }
+            
+            if (isValid) {
+                showAlert('success', 'Form valido! Tutti i campi sono stati compilati correttamente.');
+            } else {
+                showAlert('danger', `Form non valido! Trovati ${errorCount} errori. Controlla i campi evidenziati.`);
+            }
+            
+            return isValid;
+        }
+        
+        // Reset form
+        function resetForm() {
+            const formElements = document.querySelectorAll([
+                'it-form-input',
+                'it-form-textarea', 
+                'it-form-select',
+                'it-form-checkbox',
+                'it-form-radio',
+                'it-form-file',
+                'it-form-toggle'
+            ].join(', '));
+            
+            formElements.forEach(element => {
+                if (element.reset) {
+                    element.reset();
+                } else {
+                    element.value = '';
+                    element.checked = false;
+                    element.validation = null;
+                    element.validationMessage = '';
+                }
+            });
+            
+            showAlert('info', 'Form resettato. Tutti i campi sono stati svuotati.');
+        }
+        
+        // Mostra alert
+        function showAlert(type, message) {
+            alert.type = type;
+            alertMessage.textContent = message;
+            alert.style.display = 'block';
+            alert.show();
+        }
+        
+        // Submit form
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                // Simula invio form
+                showAlert('success', 'Registrazione completata con successo!');
+                
+                // Mostra dati form
+                const formData = getFormData();
+                console.log('Form Data:', formData);
+                
+                // Simula redirect
+                setTimeout(() => {
+                    showAlert('info', 'Reindirizzamento alla pagina di benvenuto...');
+                }, 2000);
+            }
+        });
+        
+        // Ottieni dati form
+        function getFormData() {
+            const formData = {};
+            const formElements = document.querySelectorAll([
+                'it-form-input',
+                'it-form-textarea', 
+                'it-form-select',
+                'it-form-checkbox',
+                'it-form-radio',
+                'it-form-file',
+                'it-form-toggle'
+            ].join(', '));
+            
+            formElements.forEach(element => {
+                const name = element.getAttribute('name');
+                if (name) {
+                    if (element.type === 'file' && element.files) {
+                        formData[name] = Array.from(element.files).map(f => ({
+                            name: f.name,
+                            size: f.size,
+                            type: f.type
+                        }));
+                    } else if (element.checked !== undefined) {
+                        if (element.checked) {
+                            if (formData[name]) {
+                                if (Array.isArray(formData[name])) {
+                                    formData[name].push(element.value || 'on');
+                                } else {
+                                    formData[name] = [formData[name], element.value || 'on'];
+                                }
+                            } else {
+                                formData[name] = element.value || 'on';
+                            }
+                        }
+                    } else if (element.value !== undefined) {
+                        formData[name] = element.value;
+                    }
+                }
+            });
+            
+            return formData;
+        }
+        
+        // Event listeners per feedback in tempo reale
+        document.addEventListener('it-form-input-change', (e) => {
+            console.log('Input changed:', e.detail);
+        });
+        
+        document.addEventListener('it-form-checkbox-change', (e) => {
+            console.log('Checkbox changed:', e.detail);
+        });
+        
+        document.addEventListener('it-form-radio-change', (e) => {
+            console.log('Radio changed:', e.detail);
+        });
+        
+        document.addEventListener('it-form-toggle-change', (e) => {
+            console.log('Toggle changed:', e.detail);
+        });
+        
+        document.addEventListener('it-form-file-change', (e) => {
+            console.log('File changed:', e.detail);
+        });
+    </script>
+</body>
+</html>
