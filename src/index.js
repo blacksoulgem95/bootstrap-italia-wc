@@ -1,7 +1,10 @@
 /**
  * Bootstrap Italia Web Components
  * 
- * A collection of native Web Components that implement Bootstrap Italia components.
+ * Una raccolta di Web Components nativi che implementano i componenti Bootstrap Italia.
+ * 
+ * ASSUNZIONE: Il CSS di Bootstrap Italia è già importato globalmente nella pagina.
+ * I Web Components si basano sui CSS esistenti e aggiungono solo funzionalità e accessibilità.
  * 
  * @version 1.0.0
  * @author Bootstrap Italia WC Contributors

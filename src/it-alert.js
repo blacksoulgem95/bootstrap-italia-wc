@@ -2,6 +2,9 @@
  * Bootstrap Italia Alert Web Component
  * Conformità alle normative europee sull'accessibilità (EN 301 549, WCAG 2.1 AA)
  * 
+ * ASSUNZIONE: Il CSS di Bootstrap Italia è già importato globalmente nella pagina
+ * Questo componente si basa sui CSS esistenti e aggiunge solo stili per accessibilità
+ * 
  * Usage:
  * <it-alert type="success" dismissible>
  *   <strong>Successo!</strong> Questo è un alert di successo.
@@ -156,13 +159,13 @@ class ItAlert extends HTMLElement {
           display: block;
         }
         
+        /* 
+         * ASSUNZIONE: Il CSS di Bootstrap Italia è già importato globalmente
+         * Questo componente si basa sui CSS esistenti e aggiunge solo stili per accessibilità
+         */
+        
         .alert {
-          position: relative;
-          padding: 0.75rem 1.25rem;
-          margin-bottom: 1rem;
-          border: 1px solid transparent;
-          border-radius: 0.25rem;
-          /* Supporto per modalità ad alto contrasto */
+          /* Supporto per modalità ad alto contrasto - aggiunto ai CSS di Bootstrap Italia */
           outline: 2px solid transparent;
           outline-offset: 2px;
         }
@@ -172,51 +175,8 @@ class ItAlert extends HTMLElement {
           outline-offset: 2px;
         }
         
-        .alert-info {
-          color: #0c5460;
-          background-color: #d1ecf1;
-          border-color: #bee5eb;
-        }
-        
-        .alert-success {
-          color: #155724;
-          background-color: #d4edda;
-          border-color: #c3e6cb;
-        }
-        
-        .alert-warning {
-          color: #856404;
-          background-color: #fff3cd;
-          border-color: #ffeaa7;
-        }
-        
-        .alert-danger {
-          color: #721c24;
-          background-color: #f8d7da;
-          border-color: #f5c6cb;
-        }
-        
-        .alert-dismissible {
-          padding-right: 4rem;
-        }
-        
         .btn-close {
-          position: absolute;
-          top: 0;
-          right: 0;
-          z-index: 2;
-          padding: 0.75rem 1.25rem;
-          color: inherit;
-          background: transparent;
-          border: 0;
-          font-size: 1.5rem;
-          font-weight: 700;
-          line-height: 1;
-          color: #000;
-          text-shadow: 0 1px 0 #fff;
-          opacity: 0.5;
-          cursor: pointer;
-          /* Accessibilità: focus visibile */
+          /* Accessibilità: focus visibile - miglioramenti ai CSS di Bootstrap Italia */
           outline: 2px solid transparent;
           outline-offset: 2px;
           border-radius: 0.25rem;
@@ -229,7 +189,6 @@ class ItAlert extends HTMLElement {
         
         .btn-close:hover,
         .btn-close:focus {
-          opacity: 0.75;
           outline: 2px solid currentColor;
           outline-offset: 2px;
         }
@@ -237,12 +196,6 @@ class ItAlert extends HTMLElement {
         .btn-close:focus-visible {
           outline: 2px solid currentColor;
           outline-offset: 2px;
-        }
-        
-        .btn-close::before {
-          content: "×";
-          font-size: 1.5rem;
-          line-height: 1;
         }
         
         .alert[hidden] {
@@ -305,6 +258,7 @@ class ItAlert extends HTMLElement {
   }
 
   getAlertClasses() {
+    // Usa le classi CSS di Bootstrap Italia esistenti
     const classes = ['alert', `alert-${this._type}`];
     if (this._dismissible) {
       classes.push('alert-dismissible');
@@ -313,6 +267,7 @@ class ItAlert extends HTMLElement {
   }
 
   getDismissButton() {
+    // Usa la classe 'btn-close' di Bootstrap Italia con miglioramenti per accessibilità
     return `
       <button 
         type="button" 
