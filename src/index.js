@@ -21,6 +21,8 @@ import ItFormRadio from './it-form-radio.js';
 import ItFormFile from './it-form-file.js';
 import ItFormToggle from './it-form-toggle.js';
 import ItFormGroup from './it-form-group.js';
+import ItButton from './it-button.js';
+import ItButtonGroup from './it-button-group.js';
 
 // Export all components
 export {
@@ -32,7 +34,9 @@ export {
   ItFormRadio,
   ItFormFile,
   ItFormToggle,
-  ItFormGroup
+  ItFormGroup,
+  ItButton,
+  ItButtonGroup
 };
 
 // Auto-register all components when the module is loaded
@@ -57,6 +61,8 @@ const BootstrapItaliaWC = {
   ItFormFile,
   ItFormToggle,
   ItFormGroup,
+  ItButton,
+  ItButtonGroup,
   
   // Utility function to check if all components are registered
   isReady() {
@@ -68,7 +74,9 @@ const BootstrapItaliaWC = {
            customElements.get('it-form-radio') !== undefined &&
            customElements.get('it-form-file') !== undefined &&
            customElements.get('it-form-toggle') !== undefined &&
-           customElements.get('it-form-group') !== undefined;
+           customElements.get('it-form-group') !== undefined &&
+           customElements.get('it-button') !== undefined &&
+           customElements.get('it-button-group') !== undefined;
   },
   
   // Utility function to wait for all components to be ready
