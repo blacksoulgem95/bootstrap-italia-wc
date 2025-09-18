@@ -116,10 +116,10 @@ src/
 #### Styling
 - **Assumere CSS globale**: I Web Components assumono che Bootstrap Italia CSS sia già importato globalmente
 - **Non re-implementare**: Non re-implementare gli stili CSS di Bootstrap Italia
-- **Basarsi sui CSS esistenti**: Utilizzare le classi CSS di Bootstrap Italia per l'aspetto visivo
-- **Aggiungere solo stili necessari**: Includere solo gli stili aggiuntivi per accessibilità e funzionalità specifiche
-- **Usare CSS custom properties**: Per theming quando appropriato
-- **Garantire accessibilità**: Assicurare conformità alle normative europee
+- **Usare SOLO classi Bootstrap Italia**: Utilizzare esclusivamente le classi CSS di Bootstrap Italia esistenti
+- **Nessun CSS custom**: Non aggiungere CSS personalizzati - tutto deve venire da Bootstrap Italia
+- **Bundle size minimo**: Mantenere il JavaScript leggero senza CSS duplicati
+- **Garantire accessibilità**: Assicurare conformità alle normative europee tramite attributi ARIA
 - **Testare su diverse dimensioni**: Verificare su diverse dimensioni schermo
 
 ### 3. Testing Strategy

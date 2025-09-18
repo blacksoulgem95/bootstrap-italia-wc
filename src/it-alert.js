@@ -161,42 +161,9 @@ class ItAlert extends HTMLElement {
         
         /* 
          * ASSUNZIONE: Il CSS di Bootstrap Italia è già importato globalmente
-         * Questo componente si basa sui CSS esistenti e aggiunge solo stili per accessibilità
+         * Questo componente usa SOLO le classi CSS di Bootstrap Italia
+         * Non aggiunge CSS custom - tutto viene da Bootstrap Italia
          */
-        
-        .alert {
-          /* Supporto per modalità ad alto contrasto - aggiunto ai CSS di Bootstrap Italia */
-          outline: 2px solid transparent;
-          outline-offset: 2px;
-        }
-        
-        .alert:focus-within {
-          outline: 2px solid currentColor;
-          outline-offset: 2px;
-        }
-        
-        .btn-close {
-          /* Accessibilità: focus visibile - miglioramenti ai CSS di Bootstrap Italia */
-          outline: 2px solid transparent;
-          outline-offset: 2px;
-          border-radius: 0.25rem;
-          min-width: 44px;
-          min-height: 44px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        
-        .btn-close:hover,
-        .btn-close:focus {
-          outline: 2px solid currentColor;
-          outline-offset: 2px;
-        }
-        
-        .btn-close:focus-visible {
-          outline: 2px solid currentColor;
-          outline-offset: 2px;
-        }
         
         .alert[hidden] {
           display: none !important;
@@ -204,38 +171,6 @@ class ItAlert extends HTMLElement {
         
         ::slotted(*) {
           margin: 0;
-        }
-        
-        /* Supporto per prefers-reduced-motion */
-        @media (prefers-reduced-motion: reduce) {
-          .alert,
-          .btn-close {
-            transition: none;
-          }
-        }
-        
-        /* Supporto per modalità ad alto contrasto */
-        @media (prefers-contrast: high) {
-          .alert {
-            border-width: 2px;
-          }
-          
-          .btn-close {
-            border: 1px solid currentColor;
-          }
-        }
-        
-        /* Classe per screen reader only */
-        .sr-only {
-          position: absolute !important;
-          width: 1px !important;
-          height: 1px !important;
-          padding: 0 !important;
-          margin: -1px !important;
-          overflow: hidden !important;
-          clip: rect(0, 0, 0, 0) !important;
-          white-space: nowrap !important;
-          border: 0 !important;
         }
       </style>
       
@@ -267,7 +202,7 @@ class ItAlert extends HTMLElement {
   }
 
   getDismissButton() {
-    // Usa la classe 'btn-close' di Bootstrap Italia con miglioramenti per accessibilità
+    // Usa SOLO le classi CSS di Bootstrap Italia - nessun CSS custom
     return `
       <button 
         type="button" 

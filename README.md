@@ -90,9 +90,10 @@ document.addEventListener('it-alert-dismiss', function(event) {
 I Web Components di Bootstrap Italia WC **assumono che il CSS di Bootstrap Italia sia già importato globalmente** nella pagina. Questo significa:
 
 - ✅ **Non re-implementano** gli stili CSS di Bootstrap Italia
-- ✅ **Si basano** sui CSS esistenti per l'aspetto visivo
-- ✅ **Aggiungono solo** gli stili necessari per l'accessibilità e le funzionalità specifiche
+- ✅ **Usano SOLO** le classi CSS di Bootstrap Italia esistenti
+- ✅ **Non aggiungono CSS custom** - tutto viene da Bootstrap Italia
 - ✅ **Sono compatibili** con qualsiasi versione di Bootstrap Italia CSS
+- ✅ **Bundle size minimo** - solo JavaScript, nessun CSS duplicato
 
 Se stai già usando Bootstrap Italia nel tuo progetto, i Web Components funzioneranno immediatamente senza configurazione aggiuntiva.
 
