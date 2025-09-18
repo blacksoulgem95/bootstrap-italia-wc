@@ -243,17 +243,37 @@ dist/
 
 ## Accessibility Guidelines
 
+### Conformità alle Normative Europee
+Tutti i componenti devono rispettare le normative europee in materia di accessibilità:
+
+- **Direttiva Europea sull'Accessibilità Web (2016/2102/EU)**
+- **EN 301 549 V3.2.1** - Standard europeo per l'accessibilità ICT
+- **WCAG 2.1 AA** - Web Content Accessibility Guidelines livello AA
+- **Direttiva Europea sui Servizi Digitali (DSA)** - per quanto applicabile
+
+### Requisiti Obbligatori
+- **Percebilità**: Le informazioni devono essere presentate in modi che gli utenti possano percepire
+- **Utilizzabilità**: I componenti devono essere navigabili e utilizzabili da tutti
+- **Comprensibilità**: Le informazioni e l'operazione dell'interfaccia devono essere comprensibili
+- **Robustezza**: Il contenuto deve essere abbastanza robusto da essere interpretato da una vasta gamma di tecnologie assistive
+
 ### ARIA Support
 - Use appropriate ARIA roles
 - Include ARIA labels and descriptions
 - Support keyboard navigation
 - Ensure screen reader compatibility
+- Implement proper focus management
+- Support high contrast mode
+- Ensure color contrast ratios meet WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
 
 ### Testing
 - Test with keyboard only
-- Test with screen readers
+- Test with screen readers (NVDA, JAWS, VoiceOver)
 - Test with high contrast mode
-- Test with reduced motion
+- Test with reduced motion preferences
+- Test with zoom up to 200%
+- Validate with automated accessibility tools (axe-core, WAVE)
+- Manual testing with real users with disabilities
 
 ## Security Considerations
 

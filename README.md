@@ -3,23 +3,23 @@
 [![npm version](https://badge.fury.io/js/bootstrap-italia-wc.svg)](https://badge.fury.io/js/bootstrap-italia-wc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Bootstrap Italia components implemented as native Web Components in vanilla JavaScript.
+Componenti Bootstrap Italia implementati come Web Components nativi in JavaScript vanilla.
 
-## Overview
+## Panoramica
 
-Bootstrap Italia WC provides a collection of native Web Components that implement the Bootstrap Italia design system. Each component extends `HTMLElement` and uses Shadow DOM where appropriate, ensuring encapsulation and compatibility with any framework or vanilla JavaScript application.
+Bootstrap Italia WC fornisce una raccolta di Web Components nativi che implementano il sistema di design Bootstrap Italia. Ogni componente estende `HTMLElement` e utilizza Shadow DOM dove appropriato, garantendo incapsulamento e compatibilità con qualsiasi framework o applicazione JavaScript vanilla.
 
-## Features
+## Caratteristiche
 
-- 🚀 **Native Web Components** - Built with vanilla JavaScript, no framework dependencies
-- 🎨 **Bootstrap Italia Design** - Follows the official Bootstrap Italia design system
-- 📦 **Lightweight** - Minimal bundle size with tree-shaking support
-- 🔧 **Framework Agnostic** - Works with React, Vue, Angular, or vanilla JavaScript
-- ♿ **Accessible** - Built with accessibility in mind
-- 🧪 **Well Tested** - Comprehensive test suite with Jest
-- 📚 **Well Documented** - Extensive documentation and examples
+- 🚀 **Web Components Nativi** - Costruiti con JavaScript vanilla, nessuna dipendenza da framework
+- 🎨 **Design Bootstrap Italia** - Segue il sistema di design ufficiale Bootstrap Italia
+- 📦 **Leggero** - Dimensioni del bundle minime con supporto tree-shaking
+- 🔧 **Framework Agnostic** - Funziona con React, Vue, Angular o JavaScript vanilla
+- ♿ **Accessibile** - Costruito con l'accessibilità in mente
+- 🧪 **Ben Testato** - Suite di test completa con Jest
+- 📚 **Ben Documentato** - Documentazione ed esempi estesi
 
-## Installation
+## Installazione
 
 ### NPM
 
@@ -30,7 +30,7 @@ npm install bootstrap-italia-wc
 ### CDN
 
 ```html
-<!-- Bootstrap Italia CSS (required) -->
+<!-- Bootstrap Italia CSS (richiesto) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
 
 <!-- Bootstrap Italia WC JavaScript -->
@@ -39,130 +39,130 @@ npm install bootstrap-italia-wc
 
 ### Download
 
-Download the latest release from the [releases page](https://github.com/your-org/bootstrap-italia-wc/releases) and include the files in your project.
+Scarica l'ultima release dalla [pagina delle release](https://github.com/your-org/bootstrap-italia-wc/releases) e includi i file nel tuo progetto.
 
-## Quick Start
+## Guida Rapida
 
-1. **Include the CSS and JavaScript:**
+1. **Includi CSS e JavaScript:**
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Bootstrap Italia CSS (required) -->
+    <!-- Bootstrap Italia CSS (richiesto) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
     
     <!-- Bootstrap Italia WC JavaScript -->
     <script src="path/to/bootstrap-italia-wc.js"></script>
 </head>
 <body>
-    <!-- Your components here -->
+    <!-- I tuoi componenti qui -->
 </body>
 </html>
 ```
 
-2. **Use the Web Components:**
+2. **Usa i Web Components:**
 
 ```html
-<!-- Basic alert -->
+<!-- Alert base -->
 <it-alert type="success">
-    <strong>Success!</strong> Your action was completed successfully.
+    <strong>Successo!</strong> La tua azione è stata completata con successo.
 </it-alert>
 
-<!-- Dismissible alert -->
+<!-- Alert dismissibile -->
 <it-alert type="warning" dismissible>
-    <strong>Warning!</strong> This alert can be dismissed.
+    <strong>Attenzione!</strong> Questo alert può essere chiuso.
 </it-alert>
 ```
 
-3. **Handle events (optional):**
+3. **Gestisci gli eventi (opzionale):**
 
 ```javascript
 document.addEventListener('it-alert-dismiss', function(event) {
-    console.log('Alert dismissed:', event.detail.type);
+    console.log('Alert chiuso:', event.detail.type);
 });
 ```
 
-## Components
+## Componenti
 
 ### it-alert
 
-Displays contextual feedback messages for user actions.
+Visualizza messaggi di feedback contestuali per le azioni dell'utente.
 
-#### Usage
+#### Utilizzo
 
 ```html
 <it-alert type="success" dismissible>
-    <strong>Success!</strong> Your action was completed successfully.
+    <strong>Successo!</strong> La tua azione è stata completata con successo.
 </it-alert>
 ```
 
-#### Attributes
+#### Attributi
 
-| Attribute | Type | Default | Description |
+| Attributo | Tipo | Default | Descrizione |
 |-----------|------|---------|-------------|
-| `type` | string | `"info"` | Alert type: `"info"`, `"success"`, `"warning"`, `"danger"` |
-| `dismissible` | boolean | `false` | Whether the alert can be dismissed |
-| `dismissed` | boolean | `false` | Whether the alert is currently dismissed |
+| `type` | string | `"info"` | Tipo di alert: `"info"`, `"success"`, `"warning"`, `"danger"` |
+| `dismissible` | boolean | `false` | Se l'alert può essere chiuso |
+| `dismissed` | boolean | `false` | Se l'alert è attualmente chiuso |
 
-#### Properties
+#### Proprietà
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `type` | string | Get/set the alert type |
-| `dismissible` | boolean | Get/set whether the alert is dismissible |
-| `dismissed` | boolean | Get/set whether the alert is dismissed |
+| Proprietà | Tipo | Descrizione |
+|-----------|------|-------------|
+| `type` | string | Ottieni/imposta il tipo di alert |
+| `dismissible` | boolean | Ottieni/imposta se l'alert è dismissibile |
+| `dismissed` | boolean | Ottieni/imposta se l'alert è chiuso |
 
-#### Methods
+#### Metodi
 
-| Method | Description |
+| Metodo | Descrizione |
 |--------|-------------|
-| `dismiss()` | Dismiss the alert |
-| `show()` | Show the alert (if dismissed) |
+| `dismiss()` | Chiudi l'alert |
+| `show()` | Mostra l'alert (se chiuso) |
 
-#### Events
+#### Eventi
 
-| Event | Description |
-|-------|-------------|
-| `it-alert-dismiss` | Fired when the alert is dismissed |
+| Evento | Descrizione |
+|--------|-------------|
+| `it-alert-dismiss` | Emesso quando l'alert viene chiuso |
 
-#### Examples
+#### Esempi
 
 ```html
-<!-- Basic alerts -->
-<it-alert type="info">Information message</it-alert>
-<it-alert type="success">Success message</it-alert>
-<it-alert type="warning">Warning message</it-alert>
-<it-alert type="danger">Danger message</it-alert>
+<!-- Alert base -->
+<it-alert type="info">Messaggio informativo</it-alert>
+<it-alert type="success">Messaggio di successo</it-alert>
+<it-alert type="warning">Messaggio di avvertimento</it-alert>
+<it-alert type="danger">Messaggio di pericolo</it-alert>
 
-<!-- Dismissible alerts -->
-<it-alert type="info" dismissible>Dismissible info alert</it-alert>
+<!-- Alert dismissibili -->
+<it-alert type="info" dismissible>Alert informativo dismissibile</it-alert>
 
-<!-- Programmatic control -->
-<it-alert type="success" dismissible id="my-alert">Controlled alert</it-alert>
+<!-- Controllo programmatico -->
+<it-alert type="success" dismissible id="my-alert">Alert controllato</it-alert>
 
 <script>
 const alert = document.getElementById('my-alert');
-alert.dismiss(); // Dismiss the alert
-alert.show();    // Show the alert
-alert.type = 'warning'; // Change type
+alert.dismiss(); // Chiudi l'alert
+alert.show();    // Mostra l'alert
+alert.type = 'warning'; // Cambia tipo
 </script>
 ```
 
-## Browser Support
+## Supporto Browser
 
-Bootstrap Italia WC supports all modern browsers that implement the Web Components standards:
+Bootstrap Italia WC supporta tutti i browser moderni che implementano gli standard Web Components:
 
 - Chrome 54+
 - Firefox 63+
 - Safari 10.1+
 - Edge 79+
 
-For older browsers, you may need to include polyfills for Custom Elements and Shadow DOM.
+Per browser più vecchi, potrebbe essere necessario includere polyfill per Custom Elements e Shadow DOM.
 
-## Development
+## Sviluppo
 
-### Prerequisites
+### Prerequisiti
 
 - Node.js 16+
 - npm 8+
@@ -170,105 +170,105 @@ For older browsers, you may need to include polyfills for Custom Elements and Sh
 ### Setup
 
 ```bash
-# Clone the repository
+# Clona il repository
 git clone https://github.com/your-org/bootstrap-italia-wc.git
 cd bootstrap-italia-wc
 
-# Install dependencies
+# Installa le dipendenze
 npm install
 
-# Build the project
+# Compila il progetto
 npm run build
 
-# Run tests
+# Esegui i test
 npm test
 
-# Run linter
+# Esegui il linter
 npm run lint
 
-# Start development server
+# Avvia il server di sviluppo
 npm run dev
 ```
 
-### Project Structure
+### Struttura del Progetto
 
 ```
 bootstrap-italia-wc/
-├── src/                    # Source code
-│   ├── it-alert.js        # Alert component
-│   └── index.js           # Main entry point
-├── dist/                  # Built files
-├── examples/              # Usage examples
-├── tests/                 # Test files
-├── package.json           # Package configuration
-├── rollup.config.js       # Rollup configuration
-├── jest.config.js         # Jest configuration
-├── README.md              # This file
-└── AGENT.md               # Internal documentation
+├── src/                    # Codice sorgente
+│   ├── it-alert.js        # Componente Alert
+│   └── index.js           # Punto di ingresso principale
+├── dist/                  # File compilati
+├── examples/              # Esempi di utilizzo
+├── tests/                 # File di test
+├── package.json           # Configurazione del package
+├── rollup.config.js       # Configurazione Rollup
+├── jest.config.js         # Configurazione Jest
+├── README.md              # Questo file
+└── AGENT.md               # Documentazione interna
 ```
 
-### Adding New Components
+### Aggiungere Nuovi Componenti
 
-1. Create a new component file in `src/` (e.g., `it-button.js`)
-2. Extend `HTMLElement` and implement the component
-3. Register the component with `customElements.define()`
-4. Export the component from `src/index.js`
-5. Add tests in `tests/`
-6. Create examples in `examples/`
-7. Update documentation
+1. Crea un nuovo file componente in `src/` (es. `it-button.js`)
+2. Estendi `HTMLElement` e implementa il componente
+3. Registra il componente con `customElements.define()`
+4. Esporta il componente da `src/index.js`
+5. Aggiungi test in `tests/`
+6. Crea esempi in `examples/`
+7. Aggiorna la documentazione
 
 ### Testing
 
 ```bash
-# Run all tests
+# Esegui tutti i test
 npm test
 
-# Run tests in watch mode
+# Esegui i test in modalità watch
 npm test -- --watch
 
-# Run tests with coverage
+# Esegui i test con coverage
 npm test -- --coverage
 ```
 
-### Building
+### Build
 
 ```bash
-# Build for production
+# Build per produzione
 npm run build
 
-# Build in watch mode
+# Build in modalità watch
 npm run dev
 ```
 
-## Contributing
+## Contribuire
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+Accogliamo i contributi! Vedi la nostra [Guida ai Contributi](CONTRIBUTING.md) per i dettagli.
 
-### Development Workflow
+### Workflow di Sviluppo
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Ensure all tests pass
-6. Submit a pull request
+1. Fork del repository
+2. Crea un branch per la feature
+3. Fai le tue modifiche
+4. Aggiungi test per le nuove funzionalità
+5. Assicurati che tutti i test passino
+6. Invia una pull request
 
-## License
+## Licenza
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Questo progetto è licenziato sotto la Licenza MIT - vedi il file [LICENSE](LICENSE) per i dettagli.
 
-## Acknowledgments
+## Ringraziamenti
 
-- [Bootstrap Italia](https://italia.github.io/bootstrap-italia/) for the design system
-- [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) for the technology
-- All contributors who help make this project better
+- [Bootstrap Italia](https://italia.github.io/bootstrap-italia/) per il sistema di design
+- [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) per la tecnologia
+- Tutti i contributori che aiutano a migliorare questo progetto
 
-## Support
+## Supporto
 
-- 📖 [Documentation](https://github.com/your-org/bootstrap-italia-wc#readme)
+- 📖 [Documentazione](https://github.com/your-org/bootstrap-italia-wc#readme)
 - 🐛 [Issue Tracker](https://github.com/your-org/bootstrap-italia-wc/issues)
-- 💬 [Discussions](https://github.com/your-org/bootstrap-italia-wc/discussions)
+- 💬 [Discussioni](https://github.com/your-org/bootstrap-italia-wc/discussions)
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
+Vedi [CHANGELOG.md](CHANGELOG.md) per un elenco delle modifiche e della cronologia delle versioni.
