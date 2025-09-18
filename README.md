@@ -2,8 +2,13 @@
 
 [![npm version](https://badge.fury.io/js/bootstrap-italia-wc.svg)](https://badge.fury.io/js/bootstrap-italia-wc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://your-org.github.io/bootstrap-italia-wc/)
 
 Componenti Bootstrap Italia implementati come Web Components nativi in JavaScript vanilla.
+
+## 🚀 Demo Live
+
+**👉 [Vedi la Demo Live su GitHub Pages](https://your-org.github.io/bootstrap-italia-wc/)**
 
 ## Panoramica
 
@@ -15,7 +20,7 @@ Bootstrap Italia WC fornisce una raccolta di Web Components nativi che implement
 - 🎨 **Design Bootstrap Italia** - Segue il sistema di design ufficiale Bootstrap Italia
 - 📦 **Leggero** - Dimensioni del bundle minime con supporto tree-shaking
 - 🔧 **Framework Agnostic** - Funziona con React, Vue, Angular o JavaScript vanilla
-- ♿ **Accessibile** - Costruito con l'accessibilità in mente
+- ♿ **Accessibile** - Costruito con l'accessibilità in mente (EN 301 549, WCAG 2.1 AA)
 - 🧪 **Ben Testato** - Suite di test completa con Jest
 - 📚 **Ben Documentato** - Documentazione ed esempi estesi
 
@@ -75,6 +80,19 @@ Scarica l'ultima release dalla [pagina delle release](https://github.com/your-or
 <it-alert type="warning" dismissible>
     <strong>Attenzione!</strong> Questo alert può essere chiuso.
 </it-alert>
+
+<!-- Form Input -->
+<it-form-input 
+    type="email" 
+    label="Email" 
+    placeholder="nome@esempio.it"
+    required
+></it-form-input>
+
+<!-- Button -->
+<it-button type="primary" icon="it-check">
+    Conferma
+</it-button>
 ```
 
 3. **Gestisci gli eventi (opzionale):**
@@ -83,7 +101,34 @@ Scarica l'ultima release dalla [pagina delle release](https://github.com/your-or
 document.addEventListener('it-alert-dismiss', function(event) {
     console.log('Alert chiuso:', event.detail.type);
 });
+
+document.addEventListener('it-form-input-change', function(event) {
+    console.log('Input cambiato:', event.detail.value);
+});
+
+document.addEventListener('it-button-click', function(event) {
+    console.log('Button cliccato:', event.detail.type);
+});
 ```
+
+## 🎯 Demo Locale
+
+Per vedere la demo localmente:
+
+```bash
+# Installa le dipendenze
+npm install
+
+# Avvia il server di sviluppo
+npm start
+```
+
+Questo comando:
+1. Compila il progetto
+2. Avvia un server HTTP sulla porta 3000
+3. Apre automaticamente il browser
+
+La demo sarà disponibile su `http://localhost:3000`
 
 ## Assunzioni sui CSS
 
@@ -119,48 +164,151 @@ Visualizza messaggi di feedback contestuali per le azioni dell'utente.
 | `dismissible` | boolean | `false` | Se l'alert può essere chiuso |
 | `dismissed` | boolean | `false` | Se l'alert è attualmente chiuso |
 
-#### Proprietà
+### it-form-input
 
-| Proprietà | Tipo | Descrizione |
-|-----------|------|-------------|
-| `type` | string | Ottieni/imposta il tipo di alert |
-| `dismissible` | boolean | Ottieni/imposta se l'alert è dismissibile |
-| `dismissed` | boolean | Ottieni/imposta se l'alert è chiuso |
+Input di testo, email, password, numero, telefono, URL e ricerca.
 
-#### Metodi
-
-| Metodo | Descrizione |
-|--------|-------------|
-| `dismiss()` | Chiudi l'alert |
-| `show()` | Mostra l'alert (se chiuso) |
-
-#### Eventi
-
-| Evento | Descrizione |
-|--------|-------------|
-| `it-alert-dismiss` | Emesso quando l'alert viene chiuso |
-
-#### Esempi
+#### Utilizzo
 
 ```html
-<!-- Alert base -->
-<it-alert type="info">Messaggio informativo</it-alert>
-<it-alert type="success">Messaggio di successo</it-alert>
-<it-alert type="warning">Messaggio di avvertimento</it-alert>
-<it-alert type="danger">Messaggio di pericolo</it-alert>
+<it-form-input 
+    type="email" 
+    label="Email" 
+    placeholder="nome@esempio.it"
+    required
+    validation="valid"
+    validation-message="Email valida"
+></it-form-input>
+```
 
-<!-- Alert dismissibili -->
-<it-alert type="info" dismissible>Alert informativo dismissibile</it-alert>
+### it-form-textarea
 
-<!-- Controllo programmatico -->
-<it-alert type="success" dismissible id="my-alert">Alert controllato</it-alert>
+Aree di testo multilinea con validazione.
 
-<script>
-const alert = document.getElementById('my-alert');
-alert.dismiss(); // Chiudi l'alert
-alert.show();    // Mostra l'alert
-alert.type = 'warning'; // Cambia tipo
-</script>
+#### Utilizzo
+
+```html
+<it-form-textarea 
+    label="Messaggio" 
+    placeholder="Inserisci il tuo messaggio"
+    rows="4"
+    maxlength="500"
+    required
+></it-form-textarea>
+```
+
+### it-form-select
+
+Menu a tendina standard e multipli.
+
+#### Utilizzo
+
+```html
+<it-form-select label="Scegli un'opzione" required>
+    <option value="">Seleziona...</option>
+    <option value="1">Opzione 1</option>
+    <option value="2">Opzione 2</option>
+</it-form-select>
+```
+
+### it-form-checkbox
+
+Checkbox con supporto stato indeterminato.
+
+#### Utilizzo
+
+```html
+<it-form-checkbox 
+    label="Accetto i termini e condizioni" 
+    value="accepted"
+    required
+></it-form-checkbox>
+```
+
+### it-form-radio
+
+Radio button con gestione gruppi.
+
+#### Utilizzo
+
+```html
+<it-form-radio 
+    name="gender"
+    label="Maschio" 
+    value="male"
+    required
+></it-form-radio>
+```
+
+### it-form-file
+
+Upload file singoli e multipli.
+
+#### Utilizzo
+
+```html
+<it-form-file 
+    label="Carica un file" 
+    accept=".pdf,.doc,.docx"
+    multiple
+    required
+></it-form-file>
+```
+
+### it-form-toggle
+
+Interruttori toggle con animazioni.
+
+#### Utilizzo
+
+```html
+<it-form-toggle 
+    label="Abilita notifiche" 
+    value="notifications"
+    help-text="Ricevi notifiche via email"
+></it-form-toggle>
+```
+
+### it-form-group
+
+Raggruppamento e validazione di campi form.
+
+#### Utilizzo
+
+```html
+<it-form-group 
+    label="Informazioni Personali" 
+    help-text="Inserisci le tue informazioni personali"
+>
+    <it-form-input type="text" label="Nome" required></it-form-input>
+    <it-form-input type="text" label="Cognome" required></it-form-input>
+</it-form-group>
+```
+
+### it-button
+
+Bottoni con diversi tipi, dimensioni e stati.
+
+#### Utilizzo
+
+```html
+<it-button type="primary" size="lg" icon="it-check">
+    Conferma
+</it-button>
+```
+
+### it-button-group
+
+Raggruppamento di bottoni orizzontali e verticali.
+
+#### Utilizzo
+
+```html
+<it-button-group>
+    <it-button type="primary">Primo</it-button>
+    <it-button type="secondary">Secondo</it-button>
+    <it-button type="success">Terzo</it-button>
+</it-button-group>
 ```
 
 ## Supporto Browser
@@ -194,6 +342,9 @@ npm install
 # Compila il progetto
 npm run build
 
+# Avvia la demo locale
+npm start
+
 # Esegui i test
 npm test
 
@@ -210,10 +361,14 @@ npm run dev
 bootstrap-italia-wc/
 ├── src/                    # Codice sorgente
 │   ├── it-alert.js        # Componente Alert
+│   ├── it-form-*.js       # Componenti Form
+│   ├── it-button*.js      # Componenti Button
 │   └── index.js           # Punto di ingresso principale
 ├── dist/                  # File compilati
 ├── examples/              # Esempi di utilizzo
+├── docs/                  # Documentazione per GitHub Pages
 ├── tests/                 # File di test
+├── .github/workflows/     # GitHub Actions
 ├── package.json           # Configurazione del package
 ├── rollup.config.js       # Configurazione Rollup
 ├── jest.config.js         # Configurazione Jest
@@ -221,38 +376,19 @@ bootstrap-italia-wc/
 └── AGENT.md               # Documentazione interna
 ```
 
-### Aggiungere Nuovi Componenti
+## GitHub Pages
 
-1. Crea un nuovo file componente in `src/` (es. `it-button.js`)
-2. Estendi `HTMLElement` e implementa il componente
-3. Registra il componente con `customElements.define()`
-4. Esporta il componente da `src/index.js`
-5. Aggiungi test in `tests/`
-6. Crea esempi in `examples/`
-7. Aggiorna la documentazione
+Il progetto è configurato per essere pubblicato automaticamente su GitHub Pages:
 
-### Testing
+1. **Push su main/master** - Attiva automaticamente il deploy
+2. **GitHub Actions** - Compila e pubblica su GitHub Pages
+3. **URL Live** - `https://your-org.github.io/bootstrap-italia-wc/`
 
-```bash
-# Esegui tutti i test
-npm test
+### Configurazione GitHub Pages
 
-# Esegui i test in modalità watch
-npm test -- --watch
-
-# Esegui i test con coverage
-npm test -- --coverage
-```
-
-### Build
-
-```bash
-# Build per produzione
-npm run build
-
-# Build in modalità watch
-npm run dev
-```
+1. Vai su Settings > Pages nel tuo repository
+2. Seleziona "GitHub Actions" come source
+3. Il workflow `.github/workflows/deploy.yml` si occuperà del resto
 
 ## Contribuire
 
@@ -282,6 +418,7 @@ Questo progetto è licenziato sotto la Licenza MIT - vedi il file [LICENSE](LICE
 - 📖 [Documentazione](https://github.com/your-org/bootstrap-italia-wc#readme)
 - 🐛 [Issue Tracker](https://github.com/your-org/bootstrap-italia-wc/issues)
 - 💬 [Discussioni](https://github.com/your-org/bootstrap-italia-wc/discussions)
+- 🚀 [Demo Live](https://your-org.github.io/bootstrap-italia-wc/)
 
 ## Changelog
 
