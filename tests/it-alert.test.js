@@ -117,6 +117,88 @@ describe('ItAlert', () => {
     });
   });
 
+  describe('Accessibility features', () => {
+    test('should have proper ARIA attributes', () => {
+      expect(alertElement.getAttribute('role')).toBe('alert');
+      expect(alertElement.getAttribute('aria-live')).toBe('polite');
+      expect(alertElement.getAttribute('aria-atomic')).toBe('true');
+    });
+
+    test('should have aria-labelledby attribute', () => {
+      const labelledBy = alertElement.getAttribute('aria-labelledby');
+      expect(labelledBy).toBeDefined();
+      expect(labelledBy).toMatch(/^alert-/);
+    });
+
+    test('should have dismiss button with proper accessibility', () => {
+      alertElement.dismissible = true;
+      const dismissButton = alertElement.shadowRoot.querySelector('.btn-close');
+      
+      if (dismissButton) {
+        expect(dismissButton.getAttribute('aria-label')).toBe('Chiudi alert');
+        expect(dismissButton.getAttribute('title')).toBe('Chiudi questo alert');
+        expect(dismissButton.getAttribute('type')).toBe('button');
+      }
+    });
+
+    test('should have proper aria-label for different types', () => {
+      const types = ['info', 'success', 'warning', 'danger'];
+      const expectedLabels = ['Alert Informazione', 'Alert Successo', 'Alert Avvertimento', 'Alert Errore'];
+      
+      types.forEach((type, index) => {
+        alertElement.type = type;
+        const alertDiv = alertElement.shadowRoot.querySelector('.alert');
+        expect(alertDiv.getAttribute('aria-label')).toBe(expectedLabels[index]);
+      });
+    });
+
+    test('should support keyboard navigation', () => {
+      alertElement.dismissible = true;
+      const dismissButton = alertElement.shadowRoot.querySelector('.btn-close');
+      
+      if (dismissButton) {
+        // Test Enter key
+        const enterEvent = new KeyboardEvent('keydown', { key: 'Enter' });
+        const dismissSpy = jest.spyOn(alertElement, 'dismiss');
+        dismissButton.dispatchEvent(enterEvent);
+        expect(dismissSpy).toHaveBeenCalled();
+        
+        dismissSpy.mockRestore();
+      }
+    });
+
+    test('should support Escape key for dismissible alerts', () => {
+      alertElement.dismissible = true;
+      const escapeEvent = new KeyboardEvent('keydown', { key: 'Escape' });
+      const dismissSpy = jest.spyOn(alertElement, 'dismiss');
+      
+      alertElement.dispatchEvent(escapeEvent);
+      expect(dismissSpy).toHaveBeenCalled();
+      
+      dismissSpy.mockRestore();
+    });
+
+    test('should have proper focus management', () => {
+      const alertDiv = alertElement.shadowRoot.querySelector('.alert');
+      expect(alertDiv.getAttribute('tabindex')).toBe('-1');
+    });
+
+    test('should announce to screen reader when dismissed', () => {
+      const announceSpy = jest.spyOn(alertElement, 'announceToScreenReader');
+      alertElement.dismiss();
+      expect(announceSpy).toHaveBeenCalledWith('Alert chiuso');
+      announceSpy.mockRestore();
+    });
+
+    test('should announce to screen reader when shown', () => {
+      alertElement.dismissed = true;
+      const announceSpy = jest.spyOn(alertElement, 'announceToScreenReader');
+      alertElement.show();
+      expect(announceSpy).toHaveBeenCalledWith('Alert riaperto');
+      announceSpy.mockRestore();
+    });
+  });
+
   describe('Edge cases', () => {
     test('should handle empty type attribute', () => {
       alertElement.setAttribute('type', '');
