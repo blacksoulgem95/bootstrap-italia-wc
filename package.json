@@ -2,6 +2,7 @@
   "name": "bootstrap-italia-wc",
   "version": "1.0.0",
   "description": "Bootstrap Italia components as native Web Components",
+  "type": "module",
   "main": "dist/bootstrap-italia-wc.js",
   "module": "dist/bootstrap-italia-wc.esm.js",
   "types": "dist/bootstrap-italia-wc.d.ts",
