@@ -17,6 +17,7 @@ export default [
       file: 'dist/bootstrap-italia-wc.js',
       format: 'umd',
       name: 'BootstrapItaliaWC',
+      exports: 'named',
       banner
     },
     plugins: [
@@ -35,6 +36,7 @@ export default [
       file: 'dist/bootstrap-italia-wc.min.js',
       format: 'umd',
       name: 'BootstrapItaliaWC',
+      exports: 'named',
       banner
     },
     plugins: [

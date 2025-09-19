@@ -2,6 +2,7 @@
   "name": "bootstrap-italia-wc",
   "version": "1.0.0",
   "description": "Bootstrap Italia components as native Web Components",
+  "type": "module",
   "main": "dist/bootstrap-italia-wc.js",
   "module": "dist/bootstrap-italia-wc.esm.js",
   "types": "dist/bootstrap-italia-wc.d.ts",
@@ -16,6 +17,8 @@
     "test": "jest",
     "lint": "eslint src/**/*.js tests/**/*.js",
     "dev": "rollup -c -w",
+    "start": "npm run build && npm run serve",
+    "serve": "npx http-server examples -p 3000 -o",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -43,6 +46,7 @@
     "@rollup/plugin-terser": "^0.4.4",
     "babel-jest": "^29.7.0",
     "eslint": "^8.52.0",
+    "http-server": "^14.1.1",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "rollup": "^4.3.0"
