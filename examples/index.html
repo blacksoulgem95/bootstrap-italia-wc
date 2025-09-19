@@ -10,335 +10,251 @@
     
     <!-- Bootstrap Italia WC JavaScript -->
     <script src="../dist/bootstrap-italia-wc.js"></script>
-    
-    <style>
-        body {
-            padding: 2rem;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        
-        .hero {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 3rem 0;
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            color: white;
-            border-radius: 0.5rem;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        
-        .component-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .component-card {
-            background: white;
-            border: 1px solid #dee2e6;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .component-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-        
-        .component-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-        }
-        
-        .component-card p {
-            color: #6c757d;
-            margin-bottom: 1.5rem;
-        }
-        
-        .component-demo {
-            margin-bottom: 1rem;
-        }
-        
-        .btn-demo {
-            width: 100%;
-            margin-top: 1rem;
-        }
-        
-        .features {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .features h2 {
-            color: #0066cc;
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: center;
-            padding: 0.5rem 0;
-        }
-        
-        .feature-item i {
-            color: #28a745;
-            margin-right: 0.5rem;
-            font-size: 1.25rem;
-        }
-        
-        .github-badge {
-            display: inline-block;
-            background: #24292e;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            text-decoration: none;
-            margin: 0.25rem;
-            transition: background-color 0.2s ease;
-        }
-        
-        .github-badge:hover {
-            background: #0366d6;
-            color: white;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container py-4">
         <!-- Hero Section -->
-        <div class="hero">
-            <h1>Bootstrap Italia WC</h1>
-            <p>Componenti Bootstrap Italia implementati come Web Components nativi</p>
-            <div>
-                <a href="form-components.html" class="btn btn-light btn-lg me-2">Demo Form</a>
-                <a href="button-components.html" class="btn btn-outline-light btn-lg me-2">Demo Button</a>
-                <a href="complete-form.html" class="btn btn-outline-light btn-lg">Form Completo</a>
+        <div class="jumbotron jumbotron-fluid bg-primary text-white text-center mb-5">
+            <div class="container">
+                <h1 class="display-4">Bootstrap Italia WC</h1>
+                <p class="lead">Componenti Bootstrap Italia implementati come Web Components nativi</p>
+                <div class="mt-4">
+                    <a href="form-components.html" class="btn btn-light btn-lg me-2">Demo Form</a>
+                    <a href="button-components.html" class="btn btn-outline-light btn-lg me-2">Demo Button</a>
+                    <a href="complete-form.html" class="btn btn-outline-light btn-lg">Form Completo</a>
+                </div>
             </div>
         </div>
         
         <!-- Features Section -->
-        <div class="features">
-            <h2>Caratteristiche</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <i class="it-check"></i>
-                    <span>Web Components Nativi</span>
-                </div>
-                <div class="feature-item">
-                    <i class="it-check"></i>
-                    <span>Design Bootstrap Italia</span>
-                </div>
-                <div class="feature-item">
-                    <i class="it-check"></i>
-                    <span>Framework Agnostic</span>
-                </div>
-                <div class="feature-item">
-                    <i class="it-check"></i>
-                    <span>Accessibilità Europea</span>
-                </div>
-                <div class="feature-item">
-                    <i class="it-check"></i>
-                    <span>Leggero e Veloce</span>
-                </div>
-                <div class="feature-item">
-                    <i class="it-check"></i>
-                    <span>Ben Testato</span>
+        <div class="card mb-5">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Caratteristiche</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="it-check text-success me-2"></i>Web Components Nativi</li>
+                            <li class="mb-2"><i class="it-check text-success me-2"></i>Design Bootstrap Italia</li>
+                            <li class="mb-2"><i class="it-check text-success me-2"></i>Framework Agnostic</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="it-check text-success me-2"></i>Accessibilità Europea</li>
+                            <li class="mb-2"><i class="it-check text-success me-2"></i>Leggero e Veloce</li>
+                            <li class="mb-2"><i class="it-check text-success me-2"></i>Ben Testato</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Components Grid -->
-        <div class="component-grid">
+        <div class="row">
             <!-- Alert Component -->
-            <div class="component-card">
-                <h3>Alert</h3>
-                <p>Messaggi di feedback contestuali per le azioni dell'utente.</p>
-                <div class="component-demo">
-                    <it-alert type="success" dismissible>
-                        <strong>Successo!</strong> Questo è un alert di successo.
-                    </it-alert>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Alert</h3>
+                        <p class="card-text">Messaggi di feedback contestuali per le azioni dell'utente.</p>
+                        <div class="mb-3">
+                            <it-alert type="success" dismissible>
+                                <strong>Successo!</strong> Questo è un alert di successo.
+                            </it-alert>
+                        </div>
+                        <a href="form-components.html#alerts" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#alerts" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Input Component -->
-            <div class="component-card">
-                <h3>Form Input</h3>
-                <p>Input di testo, email, password, numero e altri tipi.</p>
-                <div class="component-demo">
-                    <it-form-input 
-                        type="email" 
-                        label="Email" 
-                        placeholder="nome@esempio.it"
-                        validation="valid"
-                        validation-message="Email valida"
-                    ></it-form-input>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Input</h3>
+                        <p class="card-text">Input di testo, email, password, numero e altri tipi.</p>
+                        <div class="mb-3">
+                            <it-form-input 
+                                type="email" 
+                                label="Email" 
+                                placeholder="nome@esempio.it"
+                                validation="valid"
+                                validation-message="Email valida"
+                            ></it-form-input>
+                        </div>
+                        <a href="form-components.html#inputs" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#inputs" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Textarea Component -->
-            <div class="component-card">
-                <h3>Form Textarea</h3>
-                <p>Aree di testo multilinea con validazione.</p>
-                <div class="component-demo">
-                    <it-form-textarea 
-                        label="Messaggio" 
-                        placeholder="Inserisci il tuo messaggio"
-                        rows="3"
-                    ></it-form-textarea>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Textarea</h3>
+                        <p class="card-text">Aree di testo multilinea con validazione.</p>
+                        <div class="mb-3">
+                            <it-form-textarea 
+                                label="Messaggio" 
+                                placeholder="Inserisci il tuo messaggio"
+                                rows="3"
+                            ></it-form-textarea>
+                        </div>
+                        <a href="form-components.html#textarea" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#textarea" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Select Component -->
-            <div class="component-card">
-                <h3>Form Select</h3>
-                <p>Menu a tendina standard e multipli.</p>
-                <div class="component-demo">
-                    <it-form-select label="Scegli un'opzione">
-                        <option value="">Seleziona...</option>
-                        <option value="1">Opzione 1</option>
-                        <option value="2">Opzione 2</option>
-                    </it-form-select>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Select</h3>
+                        <p class="card-text">Menu a tendina standard e multipli.</p>
+                        <div class="mb-3">
+                            <it-form-select label="Scegli un'opzione">
+                                <option value="">Seleziona...</option>
+                                <option value="1">Opzione 1</option>
+                                <option value="2">Opzione 2</option>
+                            </it-form-select>
+                        </div>
+                        <a href="form-components.html#select" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#select" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Checkbox Component -->
-            <div class="component-card">
-                <h3>Form Checkbox</h3>
-                <p>Checkbox con supporto stato indeterminato.</p>
-                <div class="component-demo">
-                    <it-form-checkbox 
-                        label="Accetto i termini" 
-                        value="accepted"
-                    ></it-form-checkbox>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Checkbox</h3>
+                        <p class="card-text">Checkbox con supporto stato indeterminato.</p>
+                        <div class="mb-3">
+                            <it-form-checkbox 
+                                label="Accetto i termini" 
+                                value="accepted"
+                            ></it-form-checkbox>
+                        </div>
+                        <a href="form-components.html#checkbox" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#checkbox" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Radio Component -->
-            <div class="component-card">
-                <h3>Form Radio</h3>
-                <p>Radio button con gestione gruppi.</p>
-                <div class="component-demo">
-                    <it-form-radio 
-                        name="demo"
-                        label="Opzione 1" 
-                        value="1"
-                    ></it-form-radio>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Radio</h3>
+                        <p class="card-text">Radio button con gestione gruppi.</p>
+                        <div class="mb-3">
+                            <it-form-radio 
+                                name="demo"
+                                label="Opzione 1" 
+                                value="1"
+                            ></it-form-radio>
+                        </div>
+                        <a href="form-components.html#radio" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#radio" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form File Component -->
-            <div class="component-card">
-                <h3>Form File</h3>
-                <p>Upload file singoli e multipli.</p>
-                <div class="component-demo">
-                    <it-form-file 
-                        label="Carica file" 
-                        accept=".pdf,.doc,.docx"
-                    ></it-form-file>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form File</h3>
+                        <p class="card-text">Upload file singoli e multipli.</p>
+                        <div class="mb-3">
+                            <it-form-file 
+                                label="Carica file" 
+                                accept=".pdf,.doc,.docx"
+                            ></it-form-file>
+                        </div>
+                        <a href="form-components.html#file" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#file" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Toggle Component -->
-            <div class="component-card">
-                <h3>Form Toggle</h3>
-                <p>Interruttori toggle con animazioni.</p>
-                <div class="component-demo">
-                    <it-form-toggle 
-                        label="Abilita notifiche" 
-                        value="notifications"
-                    ></it-form-toggle>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Toggle</h3>
+                        <p class="card-text">Interruttori toggle con animazioni.</p>
+                        <div class="mb-3">
+                            <it-form-toggle 
+                                label="Abilita notifiche" 
+                                value="notifications"
+                            ></it-form-toggle>
+                        </div>
+                        <a href="form-components.html#toggle" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#toggle" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Form Group Component -->
-            <div class="component-card">
-                <h3>Form Group</h3>
-                <p>Raggruppamento e validazione di campi form.</p>
-                <div class="component-demo">
-                    <it-form-group label="Gruppo Demo">
-                        <it-form-input type="text" label="Nome"></it-form-input>
-                    </it-form-group>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Form Group</h3>
+                        <p class="card-text">Raggruppamento e validazione di campi form.</p>
+                        <div class="mb-3">
+                            <it-form-group label="Gruppo Demo">
+                                <it-form-input type="text" label="Nome"></it-form-input>
+                            </it-form-group>
+                        </div>
+                        <a href="form-components.html#group" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="form-components.html#group" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Button Component -->
-            <div class="component-card">
-                <h3>Button</h3>
-                <p>Bottoni con diversi tipi, dimensioni e stati.</p>
-                <div class="component-demo">
-                    <it-button type="primary" icon="it-check">Conferma</it-button>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Button</h3>
+                        <p class="card-text">Bottoni con diversi tipi, dimensioni e stati.</p>
+                        <div class="mb-3">
+                            <it-button type="primary" icon="it-check">Conferma</it-button>
+                        </div>
+                        <a href="button-components.html" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="button-components.html" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
             
             <!-- Button Group Component -->
-            <div class="component-card">
-                <h3>Button Group</h3>
-                <p>Raggruppamento di bottoni orizzontali e verticali.</p>
-                <div class="component-demo">
-                    <it-button-group>
-                        <it-button type="primary">Primo</it-button>
-                        <it-button type="secondary">Secondo</it-button>
-                    </it-button-group>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Button Group</h3>
+                        <p class="card-text">Raggruppamento di bottoni orizzontali e verticali.</p>
+                        <div class="mb-3">
+                            <it-button-group>
+                                <it-button type="primary">Primo</it-button>
+                                <it-button type="secondary">Secondo</it-button>
+                            </it-button-group>
+                        </div>
+                        <a href="button-components.html#groups" class="btn btn-primary w-100">Vedi Demo</a>
+                    </div>
                 </div>
-                <a href="button-components.html#groups" class="btn btn-primary btn-demo">Vedi Demo</a>
             </div>
         </div>
         
         <!-- GitHub Links -->
-        <div class="text-center">
-            <h2>Risorse</h2>
-            <div>
-                <a href="https://github.com/your-org/bootstrap-italia-wc" class="github-badge">
-                    <i class="it-github"></i> GitHub Repository
+        <div class="text-center mt-5">
+            <h2 class="text-primary">Risorse</h2>
+            <div class="mt-3">
+                <a href="https://github.com/your-org/bootstrap-italia-wc" class="btn btn-dark me-2">
+                    <i class="it-github me-2"></i>GitHub Repository
                 </a>
-                <a href="https://github.com/your-org/bootstrap-italia-wc/issues" class="github-badge">
-                    <i class="it-bug"></i> Segnala Bug
+                <a href="https://github.com/your-org/bootstrap-italia-wc/issues" class="btn btn-outline-dark me-2">
+                    <i class="it-bug me-2"></i>Segnala Bug
                 </a>
-                <a href="https://github.com/your-org/bootstrap-italia-wc/discussions" class="github-badge">
-                    <i class="it-chat"></i> Discussioni
+                <a href="https://github.com/your-org/bootstrap-italia-wc/discussions" class="btn btn-outline-dark me-2">
+                    <i class="it-chat me-2"></i>Discussioni
                 </a>
-                <a href="https://www.npmjs.com/package/bootstrap-italia-wc" class="github-badge">
-                    <i class="it-package"></i> NPM Package
+                <a href="https://www.npmjs.com/package/bootstrap-italia-wc" class="btn btn-outline-dark">
+                    <i class="it-package me-2"></i>NPM Package
                 </a>
             </div>
         </div>
