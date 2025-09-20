@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Italia WC - CDN Test</title>
+    
+    <!-- Bootstrap Italia CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
+    
+    <!-- Bootstrap Italia WC JavaScript (CDN) -->
+    <script src="https://cdn.jsdelivr.net/gh/username/repo@latest/bootstrap-italia-wc.js"></script>
+</head>
+<body>
+    <div class="container py-4">
+        <h1 class="text-primary">Test CDN Bootstrap Italia WC</h1>
+        <p class="lead">Questa pagina testa il caricamento dei componenti tramite CDN.</p>
+        
+        <!-- Test Alert -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Test Alert</h3>
+                <it-alert type="success" dismissible>
+                    <strong>Successo!</strong> Il componente Alert funziona tramite CDN.
+                </it-alert>
+            </div>
+        </div>
+        
+        <!-- Test Form Input -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Test Form Input</h3>
+                <it-form-input 
+                    type="email" 
+                    label="Email" 
+                    placeholder="test@esempio.it"
+                    help-text="Test del componente Form Input"
+                ></it-form-input>
+            </div>
+        </div>
+        
+        <!-- Test Button -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Test Button</h3>
+                <it-button type="primary" size="lg">
+                    <i class="it-check me-2"></i> Test Button
+                </it-button>
+            </div>
+        </div>
+        
+        <!-- Status -->
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-primary">Status</h3>
+                <div id="status" class="alert alert-info">
+                    <strong>Caricamento...</strong> Verifico se i componenti sono disponibili...
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Test se i componenti sono caricati
+        function testComponents() {
+            const status = document.getElementById('status');
+            const components = [
+                'it-alert',
+                'it-form-input', 
+                'it-button'
+            ];
+            
+            let loaded = 0;
+            let total = components.length;
+            
+            components.forEach(componentName => {
+                if (customElements.get(componentName)) {
+                    loaded++;
+                }
+            });
+            
+            if (loaded === total) {
+                status.className = 'alert alert-success';
+                status.innerHTML = `<strong>Successo!</strong> Tutti i ${total} componenti sono stati caricati correttamente tramite CDN.`;
+            } else {
+                status.className = 'alert alert-warning';
+                status.innerHTML = `<strong>Attenzione!</strong> Solo ${loaded} su ${total} componenti sono stati caricati.`;
+            }
+        }
+        
+        // Test dopo il caricamento
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(testComponents, 1000);
+        });
+        
+        // Test quando i componenti sono pronti
+        if (window.BootstrapItaliaWC && BootstrapItaliaWC.isReady) {
+            BootstrapItaliaWC.isReady().then(() => {
+                testComponents();
+            });
+        }
+    </script>
+</body>
+</html>

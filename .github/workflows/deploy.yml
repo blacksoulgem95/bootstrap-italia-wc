@@ -26,11 +26,27 @@ jobs:
     - name: Build project
       run: npm run build
       
+    - name: Prepare documentation
+      run: |
+        # Copy examples to docs for GitHub Pages
+        mkdir -p docs
+        cp -r examples/* docs/
+        
+        # Create index.html in root for GitHub Pages
+        cp docs/index.html ./index.html
+        
+        # Update all HTML files to use CDN links
+        find docs -name "*.html" -type f | while read file; do
+          # Replace local script references with CDN
+          sed -i 's|src="../dist/bootstrap-italia-wc.js"|src="https://cdn.jsdelivr.net/gh/${{ github.repository }}@latest/bootstrap-italia-wc.js"|g' "$file"
+          sed -i 's|src="dist/bootstrap-italia-wc.js"|src="https://cdn.jsdelivr.net/gh/${{ github.repository }}@latest/bootstrap-italia-wc.js"|g' "$file"
+        done
+        
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./examples
+        publish_dir: ./docs
         destination_dir: .
         exclude_assets: ''

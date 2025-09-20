@@ -1,0 +1,82 @@
+name: Update Repository Information
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository_name:
+        description: 'Repository name (e.g., username/repo)'
+        required: true
+        default: 'username/repo'
+      npm_package_name:
+        description: 'NPM package name'
+        required: true
+        default: 'bootstrap-italia-wc'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Update repository references
+      run: |
+        REPO_NAME="${{ github.event.inputs.repository_name }}"
+        NPM_NAME="${{ github.event.inputs.npm_package_name }}"
+        
+        echo "Updating repository references to: $REPO_NAME"
+        echo "Updating NPM package name to: $NPM_NAME"
+        
+        # Update README.md
+        sed -i "s|your-org/bootstrap-italia-wc|$REPO_NAME|g" README.md
+        sed -i "s|bootstrap-italia-wc@1\.0\.0|$NPM_NAME@1.0.0|g" README.md
+        
+        # Update GitHub Actions workflows
+        find .github/workflows -name "*.yml" -type f | while read file; do
+          sed -i "s|\${{ github\.repository }}|$REPO_NAME|g" "$file"
+        done
+        
+        # Update examples
+        find examples -name "*.html" -type f | while read file; do
+          sed -i "s|username/repo|$REPO_NAME|g" "$file"
+        done
+        
+        # Update docs
+        find docs -name "*.html" -type f | while read file; do
+          sed -i "s|username/repo|$REPO_NAME|g" "$file"
+        done
+        
+        # Update package.json
+        sed -i "s|\"name\": \"bootstrap-italia-wc\"|\"name\": \"$NPM_NAME\"|g" package.json
+        
+        # Update setup files
+        sed -i "s|username/repo|$REPO_NAME|g" SETUP_GITHUB.md
+        sed -i "s|bootstrap-italia-wc|$NPM_NAME|g" SETUP_GITHUB.md
+        
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+    - name: Commit and push changes
+      run: |
+        git add .
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update repository references to ${{ github.event.inputs.repository_name }}"
+          git push origin ${{ github.ref_name }}
+        fi
+        
+    - name: Summary
+      run: |
+        echo "✅ Repository references updated successfully!"
+        echo "📦 NPM package name: ${{ github.event.inputs.npm_package_name }}"
+        echo "🔗 Repository: ${{ github.event.inputs.repository_name }}"
+        echo ""
+        echo "Next steps:"
+        echo "1. Configure NPM_TOKEN secret in repository settings"
+        echo "2. Enable GitHub Pages in repository settings"
+        echo "3. Run the 'Setup Repository' workflow"
+        echo "4. Test the workflows by pushing to master"

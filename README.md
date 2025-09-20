@@ -10,6 +10,15 @@ Componenti Bootstrap Italia implementati come Web Components nativi in JavaScrip
 
 **👉 [Vedi la Demo Live su GitHub Pages](https://your-org.github.io/bootstrap-italia-wc/)**
 
+### Link CDN
+```html
+<!-- Per versione specifica (NPM) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-italia-wc@1.0.0/dist/bootstrap-italia-wc.js"></script>
+
+<!-- Per build più recente (GitHub) -->
+<script src="https://cdn.jsdelivr.net/gh/username/repo@latest/bootstrap-italia-wc.js"></script>
+```
+
 ## Panoramica
 
 Bootstrap Italia WC fornisce una raccolta di Web Components nativi che implementano il sistema di design Bootstrap Italia. Ogni componente estende `HTMLElement` e utilizza Shadow DOM dove appropriato, garantendo incapsulamento e compatibilità con qualsiasi framework o applicazione JavaScript vanilla.
@@ -389,6 +398,26 @@ Il progetto è configurato per essere pubblicato automaticamente su GitHub Pages
 1. Vai su Settings > Pages nel tuo repository
 2. Seleziona "GitHub Actions" come source
 3. Il workflow `.github/workflows/deploy.yml` si occuperà del resto
+
+## 🔄 GitHub Actions
+
+Il progetto utilizza GitHub Actions per automatizzare:
+
+- **CI/CD** - Test e build automatici
+- **NPM Publish** - Pubblicazione automatica su NPM quando viene creato un tag
+- **Latest Branch** - Branch `latest` con build più recente
+- **GitHub Pages** - Deploy automatico della documentazione
+- **CDN Updates** - Aggiornamento automatico dei link CDN
+
+### Setup Repository
+Per configurare il repository GitHub, segui la guida in [SETUP_GITHUB.md](SETUP_GITHUB.md).
+
+### Workflows
+- **CI** - Test e build su ogni push/PR
+- **NPM Publish** - Pubblicazione su NPM sui tag
+- **Latest Branch** - Aggiornamento branch `latest` su master
+- **Docs Update** - Aggiornamento documentazione con link CDN
+- **GitHub Pages** - Deploy documentazione
 
 ## Contribuire
 
