@@ -93,12 +93,12 @@ Dopo la configurazione, i seguenti link dovrebbero funzionare:
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia-wc@1.0.0/dist/bootstrap-italia-wc.js"></script>
 
 <!-- Per master (GitHub) -->
-<script src="https://cdn.jsdelivr.net/gh/username/repo@latest/bootstrap-italia-wc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blacksoulgem95/bootstrap-italia-wc@latest/bootstrap-italia-wc.js"></script>
 ```
 
 ### GitHub Pages
 La documentazione dovrebbe essere disponibile su:
-`https://username.github.io/repository-name`
+`https://blacksoulgem95.github.io/bootstrap-italia-wc`
 
 ### NPM Package
 Il pacchetto dovrebbe essere disponibile su:

@@ -2,13 +2,13 @@
 
 [![npm version](https://badge.fury.io/js/bootstrap-italia-wc.svg)](https://badge.fury.io/js/bootstrap-italia-wc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://your-org.github.io/bootstrap-italia-wc/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://blacksoulgem95.github.io/bootstrap-italia-wc/)
 
 Componenti Bootstrap Italia implementati come Web Components nativi in JavaScript vanilla.
 
 ## 🚀 Demo Live
 
-**👉 [Vedi la Demo Live su GitHub Pages](https://your-org.github.io/bootstrap-italia-wc/)**
+**👉 [Vedi la Demo Live su GitHub Pages](https://blacksoulgem95.github.io/bootstrap-italia-wc/)**
 
 ### Link CDN
 ```html
@@ -16,7 +16,7 @@ Componenti Bootstrap Italia implementati come Web Components nativi in JavaScrip
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia-wc@1.0.0/dist/bootstrap-italia-wc.js"></script>
 
 <!-- Per build più recente (GitHub) -->
-<script src="https://cdn.jsdelivr.net/gh/username/repo@latest/bootstrap-italia-wc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blacksoulgem95/bootstrap-italia-wc@latest/bootstrap-italia-wc.js"></script>
 ```
 
 ## Panoramica

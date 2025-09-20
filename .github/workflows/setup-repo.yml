@@ -76,7 +76,7 @@ jobs:
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
           
           <!-- JavaScript -->
-          <script src="https://cdn.jsdelivr.net/gh/${{ github.repository }}@latest/bootstrap-italia-wc.js"></script>
+          <script src="https://cdn.jsdelivr.net/gh/blacksoulgem95/bootstrap-italia-wc@latest/bootstrap-italia-wc.js"></script>
           \`\`\`
           
           ## Files
