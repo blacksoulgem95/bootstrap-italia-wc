@@ -88,7 +88,7 @@ Per utilizzare tutte le funzionalità, configurare i seguenti secrets nel reposi
 
 ### Per Master (GitHub)
 ```html
-<script src="https://cdn.jsdelivr.net/gh/username/repo@latest/bootstrap-italia-wc.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/blacksoulgem95/bootstrap-italia-wc@latest/bootstrap-italia-wc.js"></script>
 ```
 
 ## Branch Struttura

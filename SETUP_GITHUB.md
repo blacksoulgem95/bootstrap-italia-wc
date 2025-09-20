@@ -1,5 +1,8 @@
 # Setup GitHub Repository
 
+**Repository:** `blacksoulgem95/bootstrap-italia-wc`  
+**GitHub Pages:** `https://blacksoulgem95.github.io/bootstrap-italia-wc/`
+
 Questa guida spiega come configurare il repository GitHub per utilizzare tutte le GitHub Actions configurate.
 
 ## Prerequisiti

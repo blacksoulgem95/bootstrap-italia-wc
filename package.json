@@ -10,7 +10,12 @@
     "dist",
     "src",
     "README.md",
-    "AGENT.md"
+    "AGENT.md",
+    "SETUP.md",
+    "GITHUB_ACTIONS.md",
+    "SETUP_GITHUB.md",
+    "WORKFLOWS_SUMMARY.md",
+    "CDN_LINKS.md"
   ],
   "scripts": {
     "build": "rollup -c",

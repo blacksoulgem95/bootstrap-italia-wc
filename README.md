@@ -391,13 +391,14 @@ Il progetto è configurato per essere pubblicato automaticamente su GitHub Pages
 
 1. **Push su main/master** - Attiva automaticamente il deploy
 2. **GitHub Actions** - Compila e pubblica su GitHub Pages
-3. **URL Live** - `https://your-org.github.io/bootstrap-italia-wc/`
+3. **URL Live** - `https://blacksoulgem95.github.io/bootstrap-italia-wc/`
 
 ### Configurazione GitHub Pages
 
-1. Vai su Settings > Pages nel tuo repository
-2. Seleziona "GitHub Actions" come source
-3. Il workflow `.github/workflows/deploy.yml` si occuperà del resto
+1. Vai su Settings > Pages nel repository `blacksoulgem95/bootstrap-italia-wc`
+2. Seleziona "Deploy from a branch" come source
+3. Scegli branch `gh-pages` e folder `/ (root)`
+4. Il workflow `.github/workflows/deploy.yml` si occuperà del resto
 
 ## 🔄 GitHub Actions
 
@@ -444,10 +445,20 @@ Questo progetto è licenziato sotto la Licenza MIT - vedi il file [LICENSE](LICE
 
 ## Supporto
 
-- 📖 [Documentazione](https://github.com/your-org/bootstrap-italia-wc#readme)
-- 🐛 [Issue Tracker](https://github.com/your-org/bootstrap-italia-wc/issues)
-- 💬 [Discussioni](https://github.com/your-org/bootstrap-italia-wc/discussions)
-- 🚀 [Demo Live](https://your-org.github.io/bootstrap-italia-wc/)
+- 📖 [Documentazione](https://github.com/blacksoulgem95/bootstrap-italia-wc#readme)
+- 🐛 [Issue Tracker](https://github.com/blacksoulgem95/bootstrap-italia-wc/issues)
+- 💬 [Discussioni](https://github.com/blacksoulgem95/bootstrap-italia-wc/discussions)
+- 🚀 [Demo Live](https://blacksoulgem95.github.io/bootstrap-italia-wc/)
+
+## 📚 Documentazione
+
+- **[AGENT.md](AGENT.md)** - Guida per sviluppatori e architettura
+- **[SETUP.md](SETUP.md)** - Setup locale e comandi npm
+- **[GITHUB_ACTIONS.md](GITHUB_ACTIONS.md)** - Guida alle GitHub Actions
+- **[SETUP_GITHUB.md](SETUP_GITHUB.md)** - Setup repository GitHub
+- **[WORKFLOWS_SUMMARY.md](WORKFLOWS_SUMMARY.md)** - Riepilogo workflow ottimizzati
+- **[CDN_LINKS.md](CDN_LINKS.md)** - Link CDN e esempi di utilizzo
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Indice completo della documentazione
 
 ## Changelog
 
