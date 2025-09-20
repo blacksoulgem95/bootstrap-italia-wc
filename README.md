@@ -2,13 +2,22 @@
 
 [![npm version](https://badge.fury.io/js/bootstrap-italia-wc.svg)](https://badge.fury.io/js/bootstrap-italia-wc)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://your-org.github.io/bootstrap-italia-wc/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue)](https://blacksoulgem95.github.io/bootstrap-italia-wc/)
 
 Componenti Bootstrap Italia implementati come Web Components nativi in JavaScript vanilla.
 
 ## 🚀 Demo Live
 
-**👉 [Vedi la Demo Live su GitHub Pages](https://your-org.github.io/bootstrap-italia-wc/)**
+**👉 [Vedi la Demo Live su GitHub Pages](https://blacksoulgem95.github.io/bootstrap-italia-wc/)**
+
+### Link CDN
+```html
+<!-- Per versione specifica (NPM) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-italia-wc@1.0.0/dist/bootstrap-italia-wc.js"></script>
+
+<!-- Per build più recente (GitHub) -->
+<script src="https://cdn.jsdelivr.net/gh/blacksoulgem95/bootstrap-italia-wc@latest/bootstrap-italia-wc.js"></script>
+```
 
 ## Panoramica
 
@@ -382,13 +391,34 @@ Il progetto è configurato per essere pubblicato automaticamente su GitHub Pages
 
 1. **Push su main/master** - Attiva automaticamente il deploy
 2. **GitHub Actions** - Compila e pubblica su GitHub Pages
-3. **URL Live** - `https://your-org.github.io/bootstrap-italia-wc/`
+3. **URL Live** - `https://blacksoulgem95.github.io/bootstrap-italia-wc/`
 
 ### Configurazione GitHub Pages
 
-1. Vai su Settings > Pages nel tuo repository
-2. Seleziona "GitHub Actions" come source
-3. Il workflow `.github/workflows/deploy.yml` si occuperà del resto
+1. Vai su Settings > Pages nel repository `blacksoulgem95/bootstrap-italia-wc`
+2. Seleziona "Deploy from a branch" come source
+3. Scegli branch `gh-pages` e folder `/ (root)`
+4. Il workflow `.github/workflows/deploy.yml` si occuperà del resto
+
+## 🔄 GitHub Actions
+
+Il progetto utilizza GitHub Actions per automatizzare:
+
+- **CI/CD** - Test e build automatici
+- **NPM Publish** - Pubblicazione automatica su NPM quando viene creato un tag
+- **Latest Branch** - Branch `latest` con build più recente
+- **GitHub Pages** - Deploy automatico della documentazione
+- **CDN Updates** - Aggiornamento automatico dei link CDN
+
+### Setup Repository
+Per configurare il repository GitHub, segui la guida in [SETUP_GITHUB.md](SETUP_GITHUB.md).
+
+### Workflows
+- **CI** - Test e build su ogni push/PR
+- **NPM Publish** - Pubblicazione su NPM sui tag
+- **Latest Branch** - Aggiornamento branch `latest` su master
+- **Docs Update** - Aggiornamento documentazione con link CDN
+- **GitHub Pages** - Deploy documentazione
 
 ## Contribuire
 
@@ -415,10 +445,20 @@ Questo progetto è licenziato sotto la Licenza MIT - vedi il file [LICENSE](LICE
 
 ## Supporto
 
-- 📖 [Documentazione](https://github.com/your-org/bootstrap-italia-wc#readme)
-- 🐛 [Issue Tracker](https://github.com/your-org/bootstrap-italia-wc/issues)
-- 💬 [Discussioni](https://github.com/your-org/bootstrap-italia-wc/discussions)
-- 🚀 [Demo Live](https://your-org.github.io/bootstrap-italia-wc/)
+- 📖 [Documentazione](https://github.com/blacksoulgem95/bootstrap-italia-wc#readme)
+- 🐛 [Issue Tracker](https://github.com/blacksoulgem95/bootstrap-italia-wc/issues)
+- 💬 [Discussioni](https://github.com/blacksoulgem95/bootstrap-italia-wc/discussions)
+- 🚀 [Demo Live](https://blacksoulgem95.github.io/bootstrap-italia-wc/)
+
+## 📚 Documentazione
+
+- **[AGENT.md](AGENT.md)** - Guida per sviluppatori e architettura
+- **[SETUP.md](SETUP.md)** - Setup locale e comandi npm
+- **[GITHUB_ACTIONS.md](GITHUB_ACTIONS.md)** - Guida alle GitHub Actions
+- **[SETUP_GITHUB.md](SETUP_GITHUB.md)** - Setup repository GitHub
+- **[WORKFLOWS_SUMMARY.md](WORKFLOWS_SUMMARY.md)** - Riepilogo workflow ottimizzati
+- **[CDN_LINKS.md](CDN_LINKS.md)** - Link CDN e esempi di utilizzo
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Indice completo della documentazione
 
 ## Changelog
 

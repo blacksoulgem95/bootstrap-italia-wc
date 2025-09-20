@@ -1,0 +1,112 @@
+name: Setup Repository
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Create initial latest branch
+      run: |
+        # Configure Git
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Create latest branch if it doesn't exist
+        if ! git show-ref --verify --quiet refs/remotes/origin/latest; then
+          git checkout -b latest
+          
+          # Copy dist files
+          cp -r dist/* .
+          
+          # Create package.json for latest branch
+          cat > package.json << EOF
+          {
+            "name": "bootstrap-italia-wc-latest",
+            "version": "latest",
+            "description": "Bootstrap Italia Web Components - Latest Build",
+            "main": "bootstrap-italia-wc.js",
+            "files": [
+              "bootstrap-italia-wc.js",
+              "bootstrap-italia-wc.min.js",
+              "bootstrap-italia-wc.esm.js"
+            ],
+            "repository": {
+              "type": "git",
+              "url": "https://github.com/${{ github.repository }}.git",
+              "directory": "latest"
+            },
+            "keywords": [
+              "bootstrap-italia",
+              "web-components",
+              "ui-components",
+              "accessibility"
+            ],
+            "author": "Bootstrap Italia WC Team",
+            "license": "MIT"
+          }
+          EOF
+          
+          # Create README for latest branch
+          cat > README.md << EOF
+          # Bootstrap Italia WC - Latest Build
+          
+          This is the latest build of Bootstrap Italia Web Components.
+          
+          ## Usage
+          
+          \`\`\`html
+          <!-- CSS -->
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.0/dist/css/bootstrap-italia.min.css">
+          
+          <!-- JavaScript -->
+          <script src="https://cdn.jsdelivr.net/gh/blacksoulgem95/bootstrap-italia-wc@latest/bootstrap-italia-wc.js"></script>
+          \`\`\`
+          
+          ## Files
+          
+          - \`bootstrap-italia-wc.js\` - Development build
+          - \`bootstrap-italia-wc.min.js\` - Production build (minified)
+          - \`bootstrap-italia-wc.esm.js\` - ES Module build
+          
+          ## Version
+          
+          Latest build from commit: \`${{ github.sha }}\`
+          
+          Built on: \`$(date -u +"%Y-%m-%d %H:%M:%S UTC")\`
+          EOF
+          
+          # Commit and push
+          git add .
+          git commit -m "Initial latest branch setup"
+          git push origin latest
+        else
+          echo "Latest branch already exists"
+        fi
+        
+    - name: Enable GitHub Pages
+      run: |
+        # This step is informational - GitHub Pages must be enabled manually
+        echo "To enable GitHub Pages:"
+        echo "1. Go to repository Settings"
+        echo "2. Scroll to Pages section"
+        echo "3. Select 'Deploy from a branch'"
+        echo "4. Choose 'gh-pages' branch"
+        echo "5. Select '/ (root)' folder"
+        echo "6. Click Save"

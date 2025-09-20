@@ -10,282 +10,148 @@
     
     <!-- Bootstrap Italia WC JavaScript -->
     <script src="../dist/bootstrap-italia-wc.js"></script>
-    
-    <style>
-        body {
-            padding: 2rem;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        
-        .section {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        .section:last-child {
-            border-bottom: none;
-        }
-        
-        .section h2 {
-            color: #0066cc;
-            margin-bottom: 1.5rem;
-        }
-        
-        .section h3 {
-            color: #495057;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .example {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 0.375rem;
-        }
-        
-        .code {
-            background-color: #f1f3f4;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-            margin-top: 1rem;
-            overflow-x: auto;
-        }
-        
-        .btn-demo {
-            margin-top: 1rem;
-        }
-        
-        .button-showcase {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bootstrap Italia WC - Button Components</h1>
+    <div class="container py-4">
+        <h1 class="text-primary">Bootstrap Italia WC - Button Components</h1>
         <p class="lead">Esempi di utilizzo dei componenti button di Bootstrap Italia implementati come Web Components.</p>
         
         <!-- Button Types Section -->
-        <div class="section">
-            <h2>Tipi di Button</h2>
-            <p>Diversi tipi di button con colori Bootstrap Italia.</p>
-            
-            <div class="example">
-                <h3>Button Primari</h3>
-                <div class="button-showcase">
-                    <it-button type="primary">Primary</it-button>
-                    <it-button type="secondary">Secondary</it-button>
-                    <it-button type="success">Success</it-button>
-                    <it-button type="danger">Danger</it-button>
-                    <it-button type="warning">Warning</it-button>
-                    <it-button type="info">Info</it-button>
-                    <it-button type="light">Light</it-button>
-                    <it-button type="dark">Dark</it-button>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Tipi di Button</h2>
+                <p class="card-text">Diversi tipi di button con colori Bootstrap Italia.</p>
+                
+                <h4>Button Primari</h4>
+                <div class="mb-3">
+                    <it-button type="primary" class="me-2 mb-2">Primary</it-button>
+                    <it-button type="secondary" class="me-2 mb-2">Secondary</it-button>
+                    <it-button type="success" class="me-2 mb-2">Success</it-button>
+                    <it-button type="danger" class="me-2 mb-2">Danger</it-button>
+                    <it-button type="warning" class="me-2 mb-2">Warning</it-button>
+                    <it-button type="info" class="me-2 mb-2">Info</it-button>
+                    <it-button type="light" class="me-2 mb-2">Light</it-button>
+                    <it-button type="dark" class="me-2 mb-2">Dark</it-button>
                 </div>
                 
-                <div class="code">
-&lt;it-button type="primary"&gt;Primary&lt;/it-button&gt;
-&lt;it-button type="secondary"&gt;Secondary&lt;/it-button&gt;
-&lt;it-button type="success"&gt;Success&lt;/it-button&gt;
-&lt;it-button type="danger"&gt;Danger&lt;/it-button&gt;
-&lt;it-button type="warning"&gt;Warning&lt;/it-button&gt;
-&lt;it-button type="info"&gt;Info&lt;/it-button&gt;
-&lt;it-button type="light"&gt;Light&lt;/it-button&gt;
-&lt;it-button type="dark"&gt;Dark&lt;/it-button&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Button Outline</h3>
-                <div class="button-showcase">
-                    <it-button type="primary" variant="outline">Primary</it-button>
-                    <it-button type="secondary" variant="outline">Secondary</it-button>
-                    <it-button type="success" variant="outline">Success</it-button>
-                    <it-button type="danger" variant="outline">Danger</it-button>
-                    <it-button type="warning" variant="outline">Warning</it-button>
-                    <it-button type="info" variant="outline">Info</it-button>
-                </div>
-                
-                <div class="code">
-&lt;it-button type="primary" variant="outline"&gt;Primary&lt;/it-button&gt;
-&lt;it-button type="secondary" variant="outline"&gt;Secondary&lt;/it-button&gt;
-&lt;it-button type="success" variant="outline"&gt;Success&lt;/it-button&gt;
-&lt;it-button type="danger" variant="outline"&gt;Danger&lt;/it-button&gt;
-&lt;it-button type="warning" variant="outline"&gt;Warning&lt;/it-button&gt;
-&lt;it-button type="info" variant="outline"&gt;Info&lt;/it-button&gt;
+                <h4>Button Outline</h4>
+                <div class="mb-3">
+                    <it-button type="primary" variant="outline" class="me-2 mb-2">Primary</it-button>
+                    <it-button type="secondary" variant="outline" class="me-2 mb-2">Secondary</it-button>
+                    <it-button type="success" variant="outline" class="me-2 mb-2">Success</it-button>
+                    <it-button type="danger" variant="outline" class="me-2 mb-2">Danger</it-button>
+                    <it-button type="warning" variant="outline" class="me-2 mb-2">Warning</it-button>
+                    <it-button type="info" variant="outline" class="me-2 mb-2">Info</it-button>
                 </div>
             </div>
         </div>
         
         <!-- Button Sizes Section -->
-        <div class="section">
-            <h2>Dimensioni Button</h2>
-            <p>Diverse dimensioni di button disponibili.</p>
-            
-            <div class="example">
-                <h3>Dimensioni</h3>
-                <div class="button-showcase">
-                    <it-button type="primary" size="sm">Small</it-button>
-                    <it-button type="primary">Default</it-button>
-                    <it-button type="primary" size="lg">Large</it-button>
-                </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Dimensioni Button</h2>
+                <p class="card-text">Diverse dimensioni di button disponibili.</p>
                 
-                <div class="code">
-&lt;it-button type="primary" size="sm"&gt;Small&lt;/it-button&gt;
-&lt;it-button type="primary"&gt;Default&lt;/it-button&gt;
-&lt;it-button type="primary" size="lg"&gt;Large&lt;/it-button&gt;
+                <h4>Dimensioni</h4>
+                <div class="mb-3">
+                    <it-button type="primary" size="sm" class="me-2">Small</it-button>
+                    <it-button type="primary" class="me-2">Default</it-button>
+                    <it-button type="primary" size="lg" class="me-2">Large</it-button>
                 </div>
             </div>
         </div>
         
         <!-- Button States Section -->
-        <div class="section">
-            <h2>Stati Button</h2>
-            <p>Diversi stati di button: normale, disabilitato, loading.</p>
-            
-            <div class="example">
-                <h3>Stati</h3>
-                <div class="button-showcase">
-                    <it-button type="primary">Normale</it-button>
-                    <it-button type="primary" disabled>Disabilitato</it-button>
-                    <it-button type="primary" loading>Loading</it-button>
-                </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Stati Button</h2>
+                <p class="card-text">Diversi stati di button: normale, disabilitato, loading.</p>
                 
-                <div class="code">
-&lt;it-button type="primary"&gt;Normale&lt;/it-button&gt;
-&lt;it-button type="primary" disabled&gt;Disabilitato&lt;/it-button&gt;
-&lt;it-button type="primary" loading&gt;Loading&lt;/it-button&gt;
+                <h4>Stati</h4>
+                <div class="mb-3">
+                    <it-button type="primary" class="me-2">Normale</it-button>
+                    <it-button type="primary" disabled class="me-2">Disabilitato</it-button>
+                    <it-button type="primary" loading class="me-2">Loading</it-button>
                 </div>
             </div>
         </div>
         
         <!-- Button with Icons Section -->
-        <div class="section">
-            <h2>Button con Icone</h2>
-            <p>Button con icone Bootstrap Italia.</p>
-            
-            <div class="example">
-                <h3>Icone</h3>
-                <div class="button-showcase">
-                    <it-button type="primary" icon="it-settings">Impostazioni</it-button>
-                    <it-button type="success" icon="it-check" icon-position="right">Conferma</it-button>
-                    <it-button type="danger" icon="it-close">Elimina</it-button>
-                    <it-button type="info" icon="it-info">Info</it-button>
-                </div>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Button con Icone</h2>
+                <p class="card-text">Button con icone Bootstrap Italia.</p>
                 
-                <div class="code">
-&lt;it-button type="primary" icon="it-settings"&gt;Impostazioni&lt;/it-button&gt;
-&lt;it-button type="success" icon="it-check" icon-position="right"&gt;Conferma&lt;/it-button&gt;
-&lt;it-button type="danger" icon="it-close"&gt;Elimina&lt;/it-button&gt;
-&lt;it-button type="info" icon="it-info"&gt;Info&lt;/it-button&gt;
+                <h4>Icone</h4>
+                <div class="mb-3">
+                    <it-button type="primary" icon="it-settings" class="me-2 mb-2">Impostazioni</it-button>
+                    <it-button type="success" icon="it-check" icon-position="right" class="me-2 mb-2">Conferma</it-button>
+                    <it-button type="danger" icon="it-close" class="me-2 mb-2">Elimina</it-button>
+                    <it-button type="info" icon="it-info" class="me-2 mb-2">Info</it-button>
                 </div>
             </div>
         </div>
         
         <!-- Button Groups Section -->
-        <div class="section">
-            <h2>Button Groups</h2>
-            <p>Raggruppamento di button orizzontali e verticali.</p>
-            
-            <div class="example">
-                <h3>Gruppo Orizzontale</h3>
-                <it-button-group>
-                    <it-button type="primary">Primo</it-button>
-                    <it-button type="secondary">Secondo</it-button>
-                    <it-button type="success">Terzo</it-button>
-                </it-button-group>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Button Groups</h2>
+                <p class="card-text">Raggruppamento di button orizzontali e verticali.</p>
                 
-                <div class="code">
-&lt;it-button-group&gt;
-    &lt;it-button type="primary"&gt;Primo&lt;/it-button&gt;
-    &lt;it-button type="secondary"&gt;Secondo&lt;/it-button&gt;
-    &lt;it-button type="success"&gt;Terzo&lt;/it-button&gt;
-&lt;/it-button-group&gt;
+                <h4>Gruppo Orizzontale</h4>
+                <div class="mb-4">
+                    <it-button-group>
+                        <it-button type="primary">Primo</it-button>
+                        <it-button type="secondary">Secondo</it-button>
+                        <it-button type="success">Terzo</it-button>
+                    </it-button-group>
                 </div>
-            </div>
-            
-            <div class="example">
-                <h3>Gruppo Verticale</h3>
-                <it-button-group vertical>
-                    <it-button type="primary">Primo</it-button>
-                    <it-button type="secondary">Secondo</it-button>
-                    <it-button type="success">Terzo</it-button>
-                </it-button-group>
                 
-                <div class="code">
-&lt;it-button-group vertical&gt;
-    &lt;it-button type="primary"&gt;Primo&lt;/it-button&gt;
-    &lt;it-button type="secondary"&gt;Secondo&lt;/it-button&gt;
-    &lt;it-button type="success"&gt;Terzo&lt;/it-button&gt;
-&lt;/it-button-group&gt;
+                <h4>Gruppo Verticale</h4>
+                <div class="mb-4">
+                    <it-button-group vertical>
+                        <it-button type="primary">Primo</it-button>
+                        <it-button type="secondary">Secondo</it-button>
+                        <it-button type="success">Terzo</it-button>
+                    </it-button-group>
                 </div>
-            </div>
-            
-            <div class="example">
-                <h3>Gruppo con Dimensioni</h3>
-                <it-button-group size="lg">
-                    <it-button type="primary">Large</it-button>
-                    <it-button type="secondary">Large</it-button>
-                    <it-button type="success">Large</it-button>
-                </it-button-group>
                 
-                <div class="code">
-&lt;it-button-group size="lg"&gt;
-    &lt;it-button type="primary"&gt;Large&lt;/it-button&gt;
-    &lt;it-button type="secondary"&gt;Large&lt;/it-button&gt;
-    &lt;it-button type="success"&gt;Large&lt;/it-button&gt;
-&lt;/it-button-group&gt;
+                <h4>Gruppo con Dimensioni</h4>
+                <div class="mb-3">
+                    <it-button-group size="lg">
+                        <it-button type="primary">Large</it-button>
+                        <it-button type="secondary">Large</it-button>
+                        <it-button type="success">Large</it-button>
+                    </it-button-group>
                 </div>
             </div>
         </div>
         
         <!-- Interactive Examples Section -->
-        <div class="section">
-            <h2>Esempi Interattivi</h2>
-            <p>Prova i button interattivamente.</p>
-            
-            <div class="example">
-                <h3>Button con Eventi</h3>
-                <div class="button-showcase">
-                    <it-button type="primary" id="click-button">Clicca qui</it-button>
-                    <it-button type="success" id="loading-button">Test Loading</it-button>
-                    <it-button type="warning" id="toggle-button">Toggle Disabled</it-button>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Esempi Interattivi</h2>
+                <p class="card-text">Prova i button interattivamente.</p>
+                
+                <h4>Button con Eventi</h4>
+                <div class="mb-4">
+                    <it-button type="primary" id="click-button" class="me-2 mb-2">Clicca qui</it-button>
+                    <it-button type="success" id="loading-button" class="me-2 mb-2">Test Loading</it-button>
+                    <it-button type="warning" id="toggle-button" class="me-2 mb-2">Toggle Disabled</it-button>
                 </div>
                 
-                <div class="code">
-&lt;it-button type="primary" id="click-button"&gt;Clicca qui&lt;/it-button&gt;
-&lt;it-button type="success" id="loading-button"&gt;Test Loading&lt;/it-button&gt;
-&lt;it-button type="warning" id="toggle-button"&gt;Toggle Disabled&lt;/it-button&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Controlli Programmatici</h3>
-                <div class="button-showcase">
-                    <it-button type="primary" id="demo-button">Demo Button</it-button>
+                <h4>Controlli Programmatici</h4>
+                <div class="mb-3">
+                    <it-button type="primary" id="demo-button" class="me-2 mb-2">Demo Button</it-button>
                 </div>
                 
-                <button class="btn btn-secondary btn-demo" onclick="focusButton()">Focus Button</button>
-                <button class="btn btn-secondary btn-demo" onclick="disableButton()">Disable Button</button>
-                <button class="btn btn-secondary btn-demo" onclick="enableButton()">Enable Button</button>
-                <button class="btn btn-secondary btn-demo" onclick="setLoading()">Set Loading</button>
-                <button class="btn btn-secondary btn-demo" onclick="changeType()">Change Type</button>
+                <div class="mt-3">
+                    <button class="btn btn-secondary me-2 mb-2" onclick="focusButton()">Focus Button</button>
+                    <button class="btn btn-secondary me-2 mb-2" onclick="disableButton()">Disable Button</button>
+                    <button class="btn btn-secondary me-2 mb-2" onclick="enableButton()">Enable Button</button>
+                    <button class="btn btn-secondary me-2 mb-2" onclick="setLoading()">Set Loading</button>
+                    <button class="btn btn-secondary me-2 mb-2" onclick="changeType()">Change Type</button>
+                </div>
             </div>
         </div>
     </div>

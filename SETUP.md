@@ -42,7 +42,7 @@ Genera i file compilati in `dist/`:
 
 Dopo il primo push su `main` o `master`, la demo sarà disponibile su:
 ```
-https://[TUO-USERNAME].github.io/bootstrap-italia-wc/
+https://blacksoulgem95.github.io/bootstrap-italia-wc/
 ```
 
 ### 3. Workflow Automatico
@@ -51,7 +51,10 @@ Il workflow GitHub Actions:
 - Si attiva su push su `main`/`master`
 - Installa le dipendenze
 - Compila il progetto
+- Aggiorna link CDN automaticamente
 - Pubblica su GitHub Pages
+
+**URL Live:** `https://blacksoulgem95.github.io/bootstrap-italia-wc/`
 
 ## 📁 Struttura File
 
@@ -104,7 +107,7 @@ npm run lint       # Esegui il linter
 ## 🔗 Link Utili
 
 - **Repository**: `https://github.com/[TUO-USERNAME]/bootstrap-italia-wc`
-- **Demo Live**: `https://[TUO-USERNAME].github.io/bootstrap-italia-wc/`
+- **Demo Live**: `https://blacksoulgem95.github.io/bootstrap-italia-wc/`
 - **NPM Package**: `https://www.npmjs.com/package/bootstrap-italia-wc`
 
 ## ⚠️ Note Importanti

@@ -10,167 +10,72 @@
     
     <!-- Bootstrap Italia WC JavaScript -->
     <script src="../dist/bootstrap-italia-wc.js"></script>
-    
-    <style>
-        body {
-            padding: 2rem;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-        }
-        
-        .section {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        .section:last-child {
-            border-bottom: none;
-        }
-        
-        .section h2 {
-            color: #0066cc;
-            margin-bottom: 1.5rem;
-        }
-        
-        .section h3 {
-            color: #495057;
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .example {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 0.375rem;
-        }
-        
-        .code {
-            background-color: #f1f3f4;
-            padding: 1rem;
-            border-radius: 0.375rem;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-            margin-top: 1rem;
-            overflow-x: auto;
-        }
-        
-        .btn-demo {
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bootstrap Italia WC - Form Components</h1>
+    <div class="container py-4">
+        <h1 class="text-primary">Bootstrap Italia WC - Form Components</h1>
         <p class="lead">Esempi di utilizzo dei componenti form di Bootstrap Italia implementati come Web Components.</p>
         
         <!-- Form Input Section -->
-        <div class="section">
-            <h2>Form Input</h2>
-            <p>Componente per input di testo, email, password, numero, telefono, URL e ricerca.</p>
-            
-            <div class="example">
-                <h3>Input di Testo</h3>
-                <it-form-input 
-                    type="text" 
-                    label="Nome" 
-                    placeholder="Inserisci il tuo nome"
-                    help-text="Inserisci il tuo nome completo"
-                    required
-                ></it-form-input>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Input</h2>
+                <p class="card-text">Componente per input di testo, email, password, numero, telefono, URL e ricerca.</p>
                 
-                <div class="code">
-&lt;it-form-input 
-    type="text" 
-    label="Nome" 
-    placeholder="Inserisci il tuo nome"
-    help-text="Inserisci il tuo nome completo"
-    required
-&gt;&lt;/it-form-input&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Input Email</h3>
-                <it-form-input 
-                    type="email" 
-                    label="Email" 
-                    placeholder="nome@esempio.it"
-                    validation="valid"
-                    validation-message="Email valida"
-                ></it-form-input>
-                
-                <div class="code">
-&lt;it-form-input 
-    type="email" 
-    label="Email" 
-    placeholder="nome@esempio.it"
-    validation="valid"
-    validation-message="Email valida"
-&gt;&lt;/it-form-input&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Input Password</h3>
-                <it-form-input 
-                    type="password" 
-                    label="Password" 
-                    placeholder="Inserisci la password"
-                    required
-                ></it-form-input>
-                
-                <div class="code">
-&lt;it-form-input 
-    type="password" 
-    label="Password" 
-    placeholder="Inserisci la password"
-    required
-&gt;&lt;/it-form-input&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Input Numero</h3>
-                <it-form-input 
-                    type="number" 
-                    label="Età" 
-                    placeholder="Inserisci la tua età"
-                    min="18"
-                    max="100"
-                    required
-                ></it-form-input>
-                
-                <div class="code">
-&lt;it-form-input 
-    type="number" 
-    label="Età" 
-    placeholder="Inserisci la tua età"
-    min="18"
-    max="100"
-    required
-&gt;&lt;/it-form-input&gt;
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4>Input di Testo</h4>
+                        <it-form-input 
+                            type="text" 
+                            label="Nome" 
+                            placeholder="Inserisci il tuo nome"
+                            help-text="Inserisci il tuo nome completo"
+                            required
+                        ></it-form-input>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>Input Email</h4>
+                        <it-form-input 
+                            type="email" 
+                            label="Email" 
+                            placeholder="nome@esempio.it"
+                            validation="valid"
+                            validation-message="Email valida"
+                        ></it-form-input>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>Input Password</h4>
+                        <it-form-input 
+                            type="password" 
+                            label="Password" 
+                            placeholder="Inserisci la password"
+                            required
+                        ></it-form-input>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>Input Numero</h4>
+                        <it-form-input 
+                            type="number" 
+                            label="Età" 
+                            placeholder="Inserisci la tua età"
+                            min="18"
+                            max="100"
+                            required
+                        ></it-form-input>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Form Textarea Section -->
-        <div class="section">
-            <h2>Form Textarea</h2>
-            <p>Componente per aree di testo multilinea.</p>
-            
-            <div class="example">
-                <h3>Textarea Base</h3>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Textarea</h2>
+                <p class="card-text">Componente per aree di testo multilinea.</p>
+                
                 <it-form-textarea 
                     label="Messaggio" 
                     placeholder="Inserisci il tuo messaggio"
@@ -179,127 +84,82 @@
                     help-text="Massimo 500 caratteri"
                     required
                 ></it-form-textarea>
-                
-                <div class="code">
-&lt;it-form-textarea 
-    label="Messaggio" 
-    placeholder="Inserisci il tuo messaggio"
-    rows="4"
-    maxlength="500"
-    help-text="Massimo 500 caratteri"
-    required
-&gt;&lt;/it-form-textarea&gt;
-                </div>
             </div>
         </div>
         
         <!-- Form Select Section -->
-        <div class="section">
-            <h2>Form Select</h2>
-            <p>Componente per menu a tendina.</p>
-            
-            <div class="example">
-                <h3>Select Base</h3>
-                <it-form-select 
-                    label="Scegli un'opzione" 
-                    required
-                >
-                    <option value="">Seleziona...</option>
-                    <option value="1">Opzione 1</option>
-                    <option value="2">Opzione 2</option>
-                    <option value="3">Opzione 3</option>
-                </it-form-select>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Select</h2>
+                <p class="card-text">Componente per menu a tendina.</p>
                 
-                <div class="code">
-&lt;it-form-select 
-    label="Scegli un'opzione" 
-    required
-&gt;
-    &lt;option value=""&gt;Seleziona...&lt;/option&gt;
-    &lt;option value="1"&gt;Opzione 1&lt;/option&gt;
-    &lt;option value="2"&gt;Opzione 2&lt;/option&gt;
-    &lt;option value="3"&gt;Opzione 3&lt;/option&gt;
-&lt;/it-form-select&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Select Multipla</h3>
-                <it-form-select 
-                    label="Scegli più opzioni" 
-                    multiple
-                    size="3"
-                >
-                    <option value="1">Opzione 1</option>
-                    <option value="2">Opzione 2</option>
-                    <option value="3">Opzione 3</option>
-                    <option value="4">Opzione 4</option>
-                </it-form-select>
-                
-                <div class="code">
-&lt;it-form-select 
-    label="Scegli più opzioni" 
-    multiple
-    size="3"
-&gt;
-    &lt;option value="1"&gt;Opzione 1&lt;/option&gt;
-    &lt;option value="2"&gt;Opzione 2&lt;/option&gt;
-    &lt;option value="3"&gt;Opzione 3&lt;/option&gt;
-    &lt;option value="4"&gt;Opzione 4&lt;/option&gt;
-&lt;/it-form-select&gt;
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4>Select Base</h4>
+                        <it-form-select 
+                            label="Scegli un'opzione" 
+                            required
+                        >
+                            <option value="">Seleziona...</option>
+                            <option value="1">Opzione 1</option>
+                            <option value="2">Opzione 2</option>
+                            <option value="3">Opzione 3</option>
+                        </it-form-select>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>Select Multipla</h4>
+                        <it-form-select 
+                            label="Scegli più opzioni" 
+                            multiple
+                            size="3"
+                        >
+                            <option value="1">Opzione 1</option>
+                            <option value="2">Opzione 2</option>
+                            <option value="3">Opzione 3</option>
+                            <option value="4">Opzione 4</option>
+                        </it-form-select>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Form Checkbox Section -->
-        <div class="section">
-            <h2>Form Checkbox</h2>
-            <p>Componente per checkbox.</p>
-            
-            <div class="example">
-                <h3>Checkbox Base</h3>
-                <it-form-checkbox 
-                    label="Accetto i termini e condizioni" 
-                    value="accepted"
-                    required
-                ></it-form-checkbox>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Checkbox</h2>
+                <p class="card-text">Componente per checkbox.</p>
                 
-                <div class="code">
-&lt;it-form-checkbox 
-    label="Accetto i termini e condizioni" 
-    value="accepted"
-    required
-&gt;&lt;/it-form-checkbox&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Checkbox con Validazione</h3>
-                <it-form-checkbox 
-                    label="Abilita notifiche" 
-                    value="notifications"
-                    validation="valid"
-                    validation-message="Notifiche abilitate"
-                ></it-form-checkbox>
-                
-                <div class="code">
-&lt;it-form-checkbox 
-    label="Abilita notifiche" 
-    value="notifications"
-    validation="valid"
-    validation-message="Notifiche abilitate"
-&gt;&lt;/it-form-checkbox&gt;
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4>Checkbox Base</h4>
+                        <it-form-checkbox 
+                            label="Accetto i termini e condizioni" 
+                            value="accepted"
+                            required
+                        ></it-form-checkbox>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>Checkbox con Validazione</h4>
+                        <it-form-checkbox 
+                            label="Abilita notifiche" 
+                            value="notifications"
+                            validation="valid"
+                            validation-message="Notifiche abilitate"
+                        ></it-form-checkbox>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Form Radio Section -->
-        <div class="section">
-            <h2>Form Radio</h2>
-            <p>Componente per radio button.</p>
-            
-            <div class="example">
-                <h3>Radio Button</h3>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Radio</h2>
+                <p class="card-text">Componente per radio button.</p>
+                
+                <h4>Radio Button</h4>
                 <it-form-radio 
                     name="gender"
                     label="Maschio" 
@@ -318,125 +178,76 @@
                     label="Altro" 
                     value="other"
                 ></it-form-radio>
-                
-                <div class="code">
-&lt;it-form-radio 
-    name="gender"
-    label="Maschio" 
-    value="male"
-    required
-&gt;&lt;/it-form-radio&gt;
-
-&lt;it-form-radio 
-    name="gender"
-    label="Femmina" 
-    value="female"
-&gt;&lt;/it-form-radio&gt;
-
-&lt;it-form-radio 
-    name="gender"
-    label="Altro" 
-    value="other"
-&gt;&lt;/it-form-radio&gt;
-                </div>
             </div>
         </div>
         
         <!-- Form File Section -->
-        <div class="section">
-            <h2>Form File</h2>
-            <p>Componente per upload di file.</p>
-            
-            <div class="example">
-                <h3>File Upload</h3>
-                <it-form-file 
-                    label="Carica un file" 
-                    accept=".pdf,.doc,.docx"
-                    help-text="Formati supportati: PDF, DOC, DOCX"
-                    required
-                ></it-form-file>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form File</h2>
+                <p class="card-text">Componente per upload di file.</p>
                 
-                <div class="code">
-&lt;it-form-file 
-    label="Carica un file" 
-    accept=".pdf,.doc,.docx"
-    help-text="Formati supportati: PDF, DOC, DOCX"
-    required
-&gt;&lt;/it-form-file&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>File Upload Multiplo</h3>
-                <it-form-file 
-                    label="Carica più file" 
-                    accept="image/*"
-                    multiple
-                    help-text="Puoi selezionare più immagini"
-                ></it-form-file>
-                
-                <div class="code">
-&lt;it-form-file 
-    label="Carica più file" 
-    accept="image/*"
-    multiple
-    help-text="Puoi selezionare più immagini"
-&gt;&lt;/it-form-file&gt;
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4>File Upload</h4>
+                        <it-form-file 
+                            label="Carica un file" 
+                            accept=".pdf,.doc,.docx"
+                            help-text="Formati supportati: PDF, DOC, DOCX"
+                            required
+                        ></it-form-file>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>File Upload Multiplo</h4>
+                        <it-form-file 
+                            label="Carica più file" 
+                            accept="image/*"
+                            multiple
+                            help-text="Puoi selezionare più immagini"
+                        ></it-form-file>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Form Toggle Section -->
-        <div class="section">
-            <h2>Form Toggle</h2>
-            <p>Componente per interruttori toggle.</p>
-            
-            <div class="example">
-                <h3>Toggle Switch</h3>
-                <it-form-toggle 
-                    label="Abilita notifiche" 
-                    value="notifications"
-                    help-text="Ricevi notifiche via email"
-                ></it-form-toggle>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Toggle</h2>
+                <p class="card-text">Componente per interruttori toggle.</p>
                 
-                <div class="code">
-&lt;it-form-toggle 
-    label="Abilita notifiche" 
-    value="notifications"
-    help-text="Ricevi notifiche via email"
-&gt;&lt;/it-form-toggle&gt;
-                </div>
-            </div>
-            
-            <div class="example">
-                <h3>Toggle con Validazione</h3>
-                <it-form-toggle 
-                    label="Accetto i termini" 
-                    value="terms"
-                    validation="invalid"
-                    validation-message="Devi accettare i termini"
-                    required
-                ></it-form-toggle>
-                
-                <div class="code">
-&lt;it-form-toggle 
-    label="Accetto i termini" 
-    value="terms"
-    validation="invalid"
-    validation-message="Devi accettare i termini"
-    required
-&gt;&lt;/it-form-toggle&gt;
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h4>Toggle Switch</h4>
+                        <it-form-toggle 
+                            label="Abilita notifiche" 
+                            value="notifications"
+                            help-text="Ricevi notifiche via email"
+                        ></it-form-toggle>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <h4>Toggle con Validazione</h4>
+                        <it-form-toggle 
+                            label="Accetto i termini" 
+                            value="terms"
+                            validation="invalid"
+                            validation-message="Devi accettare i termini"
+                            required
+                        ></it-form-toggle>
+                    </div>
                 </div>
             </div>
         </div>
         
         <!-- Form Group Section -->
-        <div class="section">
-            <h2>Form Group</h2>
-            <p>Componente per raggruppare e validare più campi form.</p>
-            
-            <div class="example">
-                <h3>Gruppo di Campi</h3>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title text-primary">Form Group</h2>
+                <p class="card-text">Componente per raggruppare e validare più campi form.</p>
+                
+                <h4>Gruppo di Campi</h4>
                 <it-form-group 
                     label="Informazioni Personali" 
                     help-text="Inserisci le tue informazioni personali"
@@ -462,45 +273,19 @@
                         required
                     ></it-form-input>
                 </it-form-group>
-                
-                <div class="code">
-&lt;it-form-group 
-    label="Informazioni Personali" 
-    help-text="Inserisci le tue informazioni personali"
-&gt;
-    &lt;it-form-input 
-        type="text" 
-        label="Nome" 
-        placeholder="Inserisci il nome"
-        required
-    &gt;&lt;/it-form-input&gt;
-    
-    &lt;it-form-input 
-        type="text" 
-        label="Cognome" 
-        placeholder="Inserisci il cognome"
-        required
-    &gt;&lt;/it-form-input&gt;
-    
-    &lt;it-form-input 
-        type="email" 
-        label="Email" 
-        placeholder="nome@esempio.it"
-        required
-    &gt;&lt;/it-form-input&gt;
-&lt;/it-form-group&gt;
-                </div>
             </div>
         </div>
         
         <!-- Demo Buttons -->
-        <div class="section">
-            <h2>Demo Interattiva</h2>
-            <p>Prova i componenti interattivamente.</p>
-            
-            <button class="btn btn-primary btn-demo" onclick="validateAll()">Valida Tutti i Campi</button>
-            <button class="btn btn-secondary btn-demo" onclick="resetAll()">Reset Tutti i Campi</button>
-            <button class="btn btn-info btn-demo" onclick="showFormData()">Mostra Dati Form</button>
+        <div class="card">
+            <div class="card-body text-center">
+                <h2 class="card-title text-primary">Demo Interattiva</h2>
+                <p class="card-text">Prova i componenti interattivamente.</p>
+                
+                <button class="btn btn-primary me-2" onclick="validateAll()">Valida Tutti i Campi</button>
+                <button class="btn btn-secondary me-2" onclick="resetAll()">Reset Tutti i Campi</button>
+                <button class="btn btn-info" onclick="showFormData()">Mostra Dati Form</button>
+            </div>
         </div>
     </div>
     
